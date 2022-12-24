@@ -13,6 +13,8 @@ namespace SpaceShooter
             Mobile
         }
 
+        [SerializeField] private ParticleSystem m_ParticleSystem;
+
         [SerializeField] private SpaceShip m_TargetShip;
 
         [SerializeField] private VirtualJoystick m_MobileJoystick;
@@ -22,7 +24,6 @@ namespace SpaceShooter
 
         private void Start()
         {
-
             // база
             if (m_ControlMode == ControlMode.Keyboard)
                 m_MobileJoystick.gameObject.SetActive(false);
@@ -82,6 +83,7 @@ namespace SpaceShooter
                 thrust = 1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
+                m_ParticleSystem.Play();
             }
 
             if (Input.GetKey(KeyCode.S))
@@ -105,7 +107,7 @@ namespace SpaceShooter
                 //return true;
             }
 
-            //return false;
+            //return false;   
 
             // база
             m_TargetShip.ThrustControl = thrust;
