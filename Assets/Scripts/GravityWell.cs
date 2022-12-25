@@ -8,6 +8,7 @@ namespace SpaceShooter
     public class GravityWell : MonoBehaviour
     {
         [SerializeField] private float m_Force;
+
         [SerializeField] private float m_Radius;
 
         private void OnTriggerStay2D(Collider2D collision)

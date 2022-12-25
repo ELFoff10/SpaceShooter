@@ -13,12 +13,13 @@ namespace SpaceShooter
         [SerializeField] private float m_TextureScale;
 
         private Material m_QuadMaterial;
-        private Vector2 m_InitialOffset; // случайный оффсет
 
+        private Vector2 m_InitialOffset; // случайный оффсет
 
         private void Start()
         {
             m_QuadMaterial = GetComponent<MeshRenderer>().material;
+
             m_InitialOffset = Random.insideUnitCircle; // Генерируется точка в рамках единичной окружности
 
             m_QuadMaterial.mainTextureScale = Vector2.one * m_TextureScale; 

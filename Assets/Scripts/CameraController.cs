@@ -36,5 +36,10 @@ namespace SpaceShooter
                                                                m_InterpolationAngular * Time.deltaTime);
             }
         }
+
+        public void SetTarget(Transform newTarget)
+        {
+            m_Target = newTarget;
+        }
     }
 }
