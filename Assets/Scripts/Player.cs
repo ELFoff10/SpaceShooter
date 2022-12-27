@@ -13,6 +13,8 @@ namespace SpaceShooter
 
         [SerializeField] private GameObject m_PlayerShipPrefab; // Префаб
 
+        [SerializeField] private GameObject m_ShipExplosionPrefab;
+
         [SerializeField] private CameraController m_CameraController;
 
         [SerializeField] private MovementController m_MovementController;
@@ -23,6 +25,12 @@ namespace SpaceShooter
         }
         private void OnShipDeath()
         {
+            Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
+
+            var explosion = Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
+
+            Destroy(explosion, 6.0f);
+
             m_NumLives--;
 
             if (m_NumLives > 0)
@@ -39,8 +47,6 @@ namespace SpaceShooter
             m_CameraController.SetTarget(m_Ship.transform);
 
             m_MovementController.SetTargetShip(m_Ship);
-
-            Debug.Log(m_NumLives);
         }
     }
 }

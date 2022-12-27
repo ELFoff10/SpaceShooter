@@ -13,7 +13,7 @@ namespace SpaceShooter
             Mobile
         }
 
-        [SerializeField] private ParticleSystem m_ParticleSystem;
+        //[SerializeField] private ParticleSystem m_ParticleSystem;
 
         [SerializeField] private SpaceShip m_TargetShip;
         public void SetTargetShip(SpaceShip targetShip) => m_TargetShip = targetShip;
@@ -84,7 +84,7 @@ namespace SpaceShooter
                 thrust = 1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
-                m_ParticleSystem.Play();
+                //m_ParticleSystem.Play();
             }
 
             if (Input.GetKey(KeyCode.S))
