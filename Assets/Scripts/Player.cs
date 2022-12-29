@@ -1,7 +1,9 @@
 using SpaceShooter;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace SpaceShooter
 {
@@ -25,17 +27,15 @@ namespace SpaceShooter
         }
         private void OnShipDeath()
         {
-            Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
-
             var explosion = Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
 
-            Destroy(explosion, 8.0f);
+            Destroy(explosion, 6.0f);
 
-            m_NumLives--;
+            m_NumLives--;            
 
             if (m_NumLives > 0)
             {
-                Respawn();
+                Invoke("Respawn", 3);
             }
         }
         private void Respawn()
@@ -47,6 +47,11 @@ namespace SpaceShooter
             m_CameraController.SetTarget(m_Ship.transform);
 
             m_MovementController.SetTargetShip(m_Ship);
+        }
+
+        private void Update()
+        {
+            Debug.Log(m_NumLives);
         }
     }
 }

@@ -168,7 +168,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80783722
 GameObject:
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 80783723}
   - component: {fileID: 80783727}
   m_Layer: 0
-  m_Name: BackgroundElement (2)
+  m_Name: BackgroundElement_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &80783727
 MonoBehaviour:
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 92943644}
   - component: {fileID: 92943645}
   m_Layer: 0
-  m_Name: BackgroundElement
+  m_Name: BackgroundElement_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +365,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &92943644
 MonoBehaviour:
@@ -423,14 +423,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41915bf29f6134543a72ba4e611298db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Earth: {fileID: 1464781062}
-  m_Mars: {fileID: 499379354}
-  m_BlackHole: {fileID: 197072511}
-  m_BlackHoleTwo: {fileID: 995198835}
-  m_SpeedRotateEarth: 20
-  m_SpeedRotateMars: 40
-  m_SpeedRotateBlackHole: 300
-  m_SpeedRotateBlackHoleTwo: 1500
+  m_Planets:
+  - {fileID: 1464781062}
+  - {fileID: 499379354}
+  - {fileID: 197072511}
+  - {fileID: 995198835}
+  - {fileID: 255496232}
+  - {fileID: 2090979544}
+  m_Speed:
+  - 20
+  - 40
+  - 5
+  - 5
+  - 5
+  - 5
+  m_Center:
+  - {fileID: 666064183}
+  - {fileID: 768711493}
+  m_Radius:
+  - 2
+  - 2
+  m_AngularSpeed:
+  - 2
+  - 2
+  m_Angle:
+  - 90
+  - 90
+  m_PosX:
+  - 5
+  - 7
+  m_PosY:
+  - -3
+  - 5
 --- !u!4 &138589268
 Transform:
   m_ObjectHideFlags: 0
@@ -444,7 +468,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197072510
 GameObject:
@@ -458,7 +482,7 @@ GameObject:
   - component: {fileID: 197072513}
   - component: {fileID: 197072514}
   m_Layer: 0
-  m_Name: BlackHole
+  m_Name: BlackHole_01
   m_TagString: WorldBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +503,7 @@ Transform:
   - {fileID: 255496232}
   - {fileID: 371244397}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &197072513
 CircleCollider2D:
@@ -525,7 +549,7 @@ GameObject:
   - component: {fileID: 205686406}
   - component: {fileID: 205686410}
   m_Layer: 0
-  m_Name: BackgroundElement (1)
+  m_Name: BackgroundElement_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +632,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &205686410
 MonoBehaviour:
@@ -802,7 +826,7 @@ GameObject:
   - component: {fileID: 499379353}
   - component: {fileID: 499379352}
   m_Layer: 0
-  m_Name: Mars
+  m_Name: PlanetMars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,14 +870,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499379351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 5.5, z: 0}
+  m_LocalPosition: {x: 7, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1391053087}
   - {fileID: 768711493}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666064182
 GameObject:
@@ -866,7 +890,6 @@ GameObject:
   - component: {fileID: 666064183}
   - component: {fileID: 666064185}
   - component: {fileID: 666064184}
-  - component: {fileID: 666064186}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -882,7 +905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666064182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -957,22 +980,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &666064186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666064182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe05beaecb4bfd4a9fea0cbe02d298d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Center: {fileID: 1464781062}
-  m_Radius: 3
-  m_AngularSpeed: 1
-  m_Angle: 0
 --- !u!1 &768711492
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +991,6 @@ GameObject:
   - component: {fileID: 768711493}
   - component: {fileID: 768711496}
   - component: {fileID: 768711495}
-  - component: {fileID: 768711494}
   m_Layer: 0
   m_Name: Phobos
   m_TagString: Untagged
@@ -1000,29 +1006,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768711492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 499379354}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768711494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768711492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe05beaecb4bfd4a9fea0cbe02d298d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Center: {fileID: 499379354}
-  m_Radius: 4.5
-  m_AngularSpeed: 1.5
-  m_Angle: 0
 --- !u!58 &768711495
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1339,7 +1329,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &961708994
 MonoBehaviour:
@@ -1389,7 +1379,7 @@ GameObject:
   - component: {fileID: 995198834}
   - component: {fileID: 995198836}
   m_Layer: 0
-  m_Name: BlackHole 2
+  m_Name: BlackHole_02
   m_TagString: WorldBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1416,7 @@ Transform:
   - {fileID: 2090979544}
   - {fileID: 903409990}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &995198836
 MonoBehaviour:
@@ -1612,7 +1602,7 @@ RectTransform:
   m_Children:
   - {fileID: 1459092954}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1855,6 +1845,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7511305519768947498, guid: 6699c95a776625143bbf1998441290a9, type: 3}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805255323009270396, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
+      propertyPath: m_EventOnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8805255323009270399, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
       propertyPath: m_Name
       value: Ship_01
@@ -2039,7 +2057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464781059
 GameObject:
@@ -2053,7 +2071,7 @@ GameObject:
   - component: {fileID: 1464781061}
   - component: {fileID: 1464781060}
   m_Layer: 0
-  m_Name: Earth
+  m_Name: PlanetEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2104,7 +2122,7 @@ Transform:
   - {fileID: 829738603}
   - {fileID: 666064183}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081993974
 GameObject:
@@ -2172,7 +2190,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090979543
 GameObject:
