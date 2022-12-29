@@ -48,11 +48,6 @@ namespace SpaceShooter
 
             m_MovementController.SetTargetShip(m_Ship);
         }
-
-        private void Update()
-        {
-            Debug.Log(m_NumLives);
-        }
     }
 }
 

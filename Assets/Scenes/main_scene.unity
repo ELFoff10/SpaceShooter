@@ -437,9 +437,12 @@ MonoBehaviour:
   - 5
   - 5
   - 5
-  m_Center:
+  m_Sputniks:
   - {fileID: 666064183}
   - {fileID: 768711493}
+  m_Center:
+  - {fileID: 1464781062}
+  - {fileID: 499379354}
   m_Radius:
   - 2
   - 2
@@ -447,14 +450,8 @@ MonoBehaviour:
   - 2
   - 2
   m_Angle:
-  - 90
-  - 90
-  m_PosX:
-  - 5
-  - 7
-  m_PosY:
-  - -3
-  - 5
+  - 0
+  - 0
 --- !u!4 &138589268
 Transform:
   m_ObjectHideFlags: 0
