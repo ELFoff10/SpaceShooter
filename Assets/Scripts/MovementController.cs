@@ -13,7 +13,7 @@ namespace SpaceShooter
             Mobile
         }
 
-        //[SerializeField] private ParticleSystem m_ParticleSystem;
+        [SerializeField] private ParticleSystem[] m_ParticleSystem;
 
         [SerializeField] private SpaceShip m_TargetShip;
         public void SetTargetShip(SpaceShip targetShip) => m_TargetShip = targetShip;
@@ -26,6 +26,11 @@ namespace SpaceShooter
         private void Start()
         {
             // база
+            for (int i = 0; i < m_ParticleSystem.Length; i++)
+            {
+                m_ParticleSystem[i].Pause();
+            }
+            
             if (m_ControlMode == ControlMode.Keyboard)
                 m_MobileJoystick.gameObject.SetActive(false);
             else
@@ -46,6 +51,7 @@ namespace SpaceShooter
 
         private void Update()
         {
+
             if (m_TargetShip == null) return;
             //ControlKeyboard();
 
@@ -84,7 +90,10 @@ namespace SpaceShooter
                 thrust = 1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
-                //m_ParticleSystem.Play();
+                for (int i = 0; i < 2; i++)
+                {
+                    m_ParticleSystem[i].Play();
+                }                
             }
 
             if (Input.GetKey(KeyCode.S))
@@ -97,6 +106,10 @@ namespace SpaceShooter
             if (Input.GetKey(KeyCode.A))
             {
                 torque = 1.0f;
+                for (int i = 2; i < 3; i++)
+                {
+                    m_ParticleSystem[i].Play();
+                }
                 //m_TargetShip.TorqueControl = torque;
                 //return true;
             }
@@ -104,6 +117,10 @@ namespace SpaceShooter
             if (Input.GetKey(KeyCode.D))
             {
                 torque = -1.0f;
+                for (int i = 3; i < 4; i++)
+                {
+                    m_ParticleSystem[i].Play();
+                }
                 //m_TargetShip.TorqueControl = torque;
                 //return true;
             }
