@@ -13,7 +13,12 @@ namespace SpaceShooter
             Mobile
         }
 
-        [SerializeField] private ParticleSystem[] m_ParticleSystem;
+        [SerializeField] private ParticleSystem m_ParticleSystemW;
+        [SerializeField] private ParticleSystem m_ParticleSystemKeyW;
+        [SerializeField] private ParticleSystem m_ParticleSystemS;
+        [SerializeField] private ParticleSystem m_ParticleSystemKeyS;
+
+        //private bool IsPressedKey = false;
 
         [SerializeField] private SpaceShip m_TargetShip;
         public void SetTargetShip(SpaceShip targetShip) => m_TargetShip = targetShip;
@@ -82,13 +87,16 @@ namespace SpaceShooter
 
             if (Input.GetKey(KeyCode.W))
             {
+                m_ParticleSystemW.Play();
+                m_ParticleSystemKeyW.Play();
+                //IsPressedKey = true;
                 thrust = 1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
-                for (int i = 0; i < 2; i++)
-                {
-                    m_ParticleSystem[i].Play();
-                }                
+                //for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
+                //{
+                //    m_ParticleSystem[i].Play();
+                //}                
             }
 
             if (Input.GetKey(KeyCode.S))
@@ -96,15 +104,22 @@ namespace SpaceShooter
                 thrust = -1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
-                for (int i = 2; i < 4; i++)
-                {
-                    m_ParticleSystem[i].Play();
-                }
+                //for (int i = 2; i < m_ParticleSystem.Length; i++)
+                //{
+                //    m_ParticleSystem[i].Play();
+                //}
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 torque = 1.0f;
+                //if (IsPressedKey == true)
+                //{
+                //    for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
+                //    {
+                //        m_ParticleSystem[i].Stop();
+                //    }
+                //}
                 //for (int i = 2; i < 3; i++)
                 //{
                 //    m_ParticleSystem[i].Play();
@@ -116,6 +131,13 @@ namespace SpaceShooter
             if (Input.GetKey(KeyCode.D))
             {
                 torque = -1.0f;
+                //if (IsPressedKey == true)
+                //{
+                //    for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
+                //    {
+                //        m_ParticleSystem[i].Stop();
+                //    }
+                //}
                 //for (int i = 3; i < 4; i++)
                 //{
                 //    m_ParticleSystem[i].Play();
@@ -129,6 +151,7 @@ namespace SpaceShooter
             // база
             m_TargetShip.ThrustControl = thrust;
             m_TargetShip.TorqueControl = torque;
+            //IsPressedKey = false;
         }
     }
 }
