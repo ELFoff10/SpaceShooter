@@ -25,12 +25,7 @@ namespace SpaceShooter
 
         private void Start()
         {
-            // база
-            for (int i = 0; i < m_ParticleSystem.Length; i++)
-            {
-                m_ParticleSystem[i].Pause();
-            }
-            
+            // база            
             if (m_ControlMode == ControlMode.Keyboard)
                 m_MobileJoystick.gameObject.SetActive(false);
             else
@@ -101,15 +96,19 @@ namespace SpaceShooter
                 thrust = -1.0f;
                 //m_TargetShip.ThrustControl = thrust;
                 //return true;
+                for (int i = 2; i < 4; i++)
+                {
+                    m_ParticleSystem[i].Play();
+                }
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 torque = 1.0f;
-                for (int i = 2; i < 3; i++)
-                {
-                    m_ParticleSystem[i].Play();
-                }
+                //for (int i = 2; i < 3; i++)
+                //{
+                //    m_ParticleSystem[i].Play();
+                //}
                 //m_TargetShip.TorqueControl = torque;
                 //return true;
             }
@@ -117,10 +116,10 @@ namespace SpaceShooter
             if (Input.GetKey(KeyCode.D))
             {
                 torque = -1.0f;
-                for (int i = 3; i < 4; i++)
-                {
-                    m_ParticleSystem[i].Play();
-                }
+                //for (int i = 3; i < 4; i++)
+                //{
+                //    m_ParticleSystem[i].Play();
+                //}
                 //m_TargetShip.TorqueControl = torque;
                 //return true;
             }

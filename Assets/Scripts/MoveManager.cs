@@ -17,12 +17,7 @@ public class MoveManager : MonoBehaviour
     [SerializeField] private Transform[] m_Center;
     [SerializeField] private float[] m_Radius, m_AngularSpeed, m_Angle;
 
-    float[] m_PosX, m_PosY;
-
-    //[SerializeField] private float[] m_AngularSpeed;
-    //[SerializeField] private float[] m_Angle;
-    //[SerializeField] private float[] m_PosX;
-    //[SerializeField] private float[] m_PosY;
+    private float m_PositionX, m_PositionY;
 
     private void Update()
     {
@@ -35,15 +30,15 @@ public class MoveManager : MonoBehaviour
 
         for (int i = 0; i < m_Center.Length; i++)
         {
-            m_PosX[i] = m_Center[i].transform.position.x + Mathf.Cos(m_Angle[i]) * m_Radius[i];
-            m_PosY[i] = m_Center[i].position.y + Mathf.Sin(m_Angle[i]) * m_Radius[i];
-            m_Sputniks[i].position = new Vector2(m_PosX[i], m_PosY[i]);
-            m_Angle[i] = m_Angle[i] + m_AngularSpeed[i] * Time.deltaTime;
+            m_PositionX = m_Center[i].transform.position.x + Mathf.Cos(m_Angle[i]) * m_Radius[i];
+            m_PositionY = m_Center[i].transform.position.y + Mathf.Sin(m_Angle[i]) * m_Radius[i];
+            m_Sputniks[i].transform.position = new Vector2(m_PositionX, m_PositionY);
+            m_Angle[i] = m_Angle[i] + Time.deltaTime * m_AngularSpeed[i];
 
             if (m_Angle[i] > 360f)
             {
                 m_Angle[i] = 0f;
             }
-        }        
+        }
     }
 }

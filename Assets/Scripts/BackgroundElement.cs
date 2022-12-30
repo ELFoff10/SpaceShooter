@@ -14,7 +14,7 @@ namespace SpaceShooter
 
         private Material m_QuadMaterial;
 
-        private Vector2 m_InitialOffset; // סכףקאיםûי מפפסוע
+        private Vector2 m_InitialOffset;
 
         private void Start()
         {
