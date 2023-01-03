@@ -5,6 +5,15 @@ namespace SpaceShooter
     [RequireComponent(typeof(Rigidbody2D))]
     public class SpaceShip : Destructible
     {
+        [SerializeField] private ParticleSystem m_ParticleSystemforward;
+        [SerializeField] private ParticleSystem m_ParticleSystemforward_1;
+        [SerializeField] private ParticleSystem m_ParticleSystemBack;
+        [SerializeField] private ParticleSystem m_ParticleSystemBack_1;
+        //[SerializeField] private ParticleSystem m_ParticleSystemLeft;
+        //[SerializeField] private ParticleSystem m_ParticleSystemLeft_1;
+        //[SerializeField] private ParticleSystem m_ParticleSystemRight;
+        //[SerializeField] private ParticleSystem m_ParticleSystemRight_1;
+
         /// <summary>
         /// Масса для автоматической установки у ригида.
         /// </summary>
@@ -65,6 +74,31 @@ namespace SpaceShooter
         private void FixedUpdate()
         {
             UpdateRigidBody();
+
+            if (ThrustControl == 1)
+            {
+                m_ParticleSystemforward.Play();
+                m_ParticleSystemforward_1.Play();
+            }
+
+            if (ThrustControl == -1)
+            {
+                m_ParticleSystemBack.Play();
+                m_ParticleSystemBack_1.Play();
+            }
+
+            //if (TorqueControl == 1)
+            //{
+            //    m_ParticleSystemLeft.Play();
+            //    m_ParticleSystemLeft_1.Play();
+            //}
+
+            //if (TorqueControl == -1)
+            //{
+            //    m_ParticleSystemRight.Play();
+            //    m_ParticleSystemRight_1.Play();
+
+            //}
         }
 
         #endregion

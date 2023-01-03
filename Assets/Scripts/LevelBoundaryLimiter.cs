@@ -16,7 +16,7 @@ namespace SpaceShooter
 
             var levelBoundary = LevelBoundary.Instance;
 
-            var radius = levelBoundary.Radius;
+            var radius = levelBoundary.WorldRadius;
 
             if (transform.position.magnitude > radius)
             {

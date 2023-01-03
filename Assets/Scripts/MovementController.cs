@@ -11,12 +11,7 @@ namespace SpaceShooter
         {
             Keyboard,
             Mobile
-        }
-
-        [SerializeField] private ParticleSystem m_ParticleSystemW;
-        [SerializeField] private ParticleSystem m_ParticleSystemKeyW;
-        [SerializeField] private ParticleSystem m_ParticleSystemS;
-        [SerializeField] private ParticleSystem m_ParticleSystemKeyS;
+        }        
 
         //private bool IsPressedKey = false;
 
@@ -87,8 +82,8 @@ namespace SpaceShooter
 
             if (Input.GetKey(KeyCode.W))
             {
-                m_ParticleSystemW.Play();
-                m_ParticleSystemKeyW.Play();
+                //m_ParticleSystemW.Play();
+                //m_ParticleSystemKeyW.Play();
                 //IsPressedKey = true;
                 thrust = 1.0f;
                 //m_TargetShip.ThrustControl = thrust;

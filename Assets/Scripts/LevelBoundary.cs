@@ -7,7 +7,7 @@ namespace SpaceShooter
     public class LevelBoundary : SingletonBase<LevelBoundary>
     {
         [SerializeField] private float m_WorldRadius;
-        public float Radius => m_WorldRadius;
+        public float WorldRadius => m_WorldRadius;
 
         public enum Mode
         {
