@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
-  m_WorldRadius: 30
-  m_LimitMode: 1
+  m_WorldRadius: 10
+  m_LimitMode: 0

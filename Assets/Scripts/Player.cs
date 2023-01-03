@@ -29,7 +29,7 @@ namespace SpaceShooter
         {
             var explosion = Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
 
-            Destroy(explosion, 3.0f);
+            Destroy(explosion, 4.0f);
 
             m_NumLives--;            
 
