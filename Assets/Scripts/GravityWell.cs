@@ -7,9 +7,7 @@ namespace SpaceShooter
     [RequireComponent(typeof(CircleCollider2D))]
     public class GravityWell : MonoBehaviour
     {
-        [SerializeField] private float m_Force;
-
-        [SerializeField] private float m_Radius;
+        [SerializeField] private float m_Force, m_Radius;
 
         private void OnTriggerStay2D(Collider2D collision)
         {

@@ -59,7 +59,6 @@ namespace SpaceShooter
 
         #endregion
 
-
         #region Unity Event
         protected override void Start()
         {

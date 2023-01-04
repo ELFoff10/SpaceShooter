@@ -1,31 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
 {
     public class MovementController : MonoBehaviour
     {
-        // база
         public enum ControlMode
         {
             Keyboard,
             Mobile
-        }        
-
-        //private bool IsPressedKey = false;
+        }    
 
         [SerializeField] private SpaceShip m_TargetShip;
         public void SetTargetShip(SpaceShip targetShip) => m_TargetShip = targetShip;
 
         [SerializeField] private VirtualJoystick m_MobileJoystick;
 
-        // база
         [SerializeField] private ControlMode m_ControlMode;
 
         private void Start()
-        {
-            // база            
+        {          
             if (m_ControlMode == ControlMode.Keyboard)
                 m_MobileJoystick.gameObject.SetActive(false);
             else
@@ -46,14 +39,7 @@ namespace SpaceShooter
 
         private void Update()
         {
-
             if (m_TargetShip == null) return;
-            //ControlKeyboard();
-
-            //if (!ControlKeyboard())
-            //{
-            //    ControlMoblile();
-            //}
 
             //база
             if (m_ControlMode == ControlMode.Keyboard)
@@ -82,71 +68,26 @@ namespace SpaceShooter
 
             if (Input.GetKey(KeyCode.W))
             {
-                //m_ParticleSystemW.Play();
-                //m_ParticleSystemKeyW.Play();
-                //IsPressedKey = true;
-                thrust = 1.0f;
-                //m_TargetShip.ThrustControl = thrust;
-                //return true;
-                //for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
-                //{
-                //    m_ParticleSystem[i].Play();
-                //}                
+                thrust = 1.0f;               
             }
 
             if (Input.GetKey(KeyCode.S))
             {
                 thrust = -1.0f;
-                //m_TargetShip.ThrustControl = thrust;
-                //return true;
-                //for (int i = 2; i < m_ParticleSystem.Length; i++)
-                //{
-                //    m_ParticleSystem[i].Play();
-                //}
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 torque = 1.0f;
-                //if (IsPressedKey == true)
-                //{
-                //    for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
-                //    {
-                //        m_ParticleSystem[i].Stop();
-                //    }
-                //}
-                //for (int i = 2; i < 3; i++)
-                //{
-                //    m_ParticleSystem[i].Play();
-                //}
-                //m_TargetShip.TorqueControl = torque;
-                //return true;
             }
 
             if (Input.GetKey(KeyCode.D))
             {
                 torque = -1.0f;
-                //if (IsPressedKey == true)
-                //{
-                //    for (int i = 0; i < m_ParticleSystem.Length - 2; i++)
-                //    {
-                //        m_ParticleSystem[i].Stop();
-                //    }
-                //}
-                //for (int i = 3; i < 4; i++)
-                //{
-                //    m_ParticleSystem[i].Play();
-                //}
-                //m_TargetShip.TorqueControl = torque;
-                //return true;
             }
 
-            //return false;   
-
-            // база
             m_TargetShip.ThrustControl = thrust;
             m_TargetShip.TorqueControl = torque;
-            //IsPressedKey = false;
         }
     }
 }
