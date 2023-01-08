@@ -582,10 +582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_01
       objectReference: {fileID: 0}
-    - target: {fileID: 8805255323009270399, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
 --- !u!1 &1451027188
@@ -1135,14 +1131,6 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 852251175}
-    - target: {fileID: 6225216086682637430, guid: d72454c10f831df4785c7dfd227c2aa5, type: 3}
-      propertyPath: m_InterpolationLinear
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225216086682637430, guid: d72454c10f831df4785c7dfd227c2aa5, type: 3}
-      propertyPath: m_InterpolationAngular
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6225216086682637431, guid: d72454c10f831df4785c7dfd227c2aa5, type: 3}
       propertyPath: m_Ship
       value: 
@@ -1223,22 +1211,6 @@ PrefabInstance:
       value: MoveManager
       objectReference: {fileID: 0}
     - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
-      propertyPath: m_Speed.Array.data[2]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
-      propertyPath: m_Speed.Array.data[3]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
-      propertyPath: m_Speed.Array.data[4]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
-      propertyPath: m_Speed.Array.data[5]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
       propertyPath: m_Center.Array.data[0]
       value: 
       objectReference: {fileID: 5598342571369639567}
@@ -1246,10 +1218,6 @@ PrefabInstance:
       propertyPath: m_Center.Array.data[1]
       value: 
       objectReference: {fileID: 7246568108147694836}
-    - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
-      propertyPath: m_Radius.Array.data[1]
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8078817448195341401, guid: 4bb371405fba8ec45a32fd47b8dcb153, type: 3}
       propertyPath: m_Planets.Array.data[0]
       value: 
