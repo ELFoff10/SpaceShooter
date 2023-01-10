@@ -17,12 +17,25 @@ namespace SpaceShooter
 
         [SerializeField] private ControlMode m_ControlMode;
 
+        [SerializeField] private PointerClickHold m_MobileFirePrimary;
+        [SerializeField] private PointerClickHold m_MobileFireSecondary;
+
         private void Start()
         {          
             if (m_ControlMode == ControlMode.Keyboard)
+            {
                 m_MobileJoystick.gameObject.SetActive(false);
+
+                m_MobileFirePrimary.gameObject.SetActive(false);
+                m_MobileFireSecondary.gameObject.SetActive(false);
+            }
             else
+            {
                 m_MobileJoystick.gameObject.SetActive(true);
+
+                m_MobileFirePrimary.gameObject.SetActive(true);
+                m_MobileFireSecondary.gameObject.SetActive(true);
+            }
 
             // Нужно сделать перед билдом игры
             //if (Application.isMobilePlatform)
@@ -57,6 +70,16 @@ namespace SpaceShooter
             var dot = Vector2.Dot(dir, m_TargetShip.transform.up); // dir и вектор стика направленный наверх, тоесть если влево (-1), то вектор направлен налево
             var dot2 = Vector2.Dot(dir, m_TargetShip.transform.right); // если мы стик направо, то умножив = 1, если налево, то -1, перпендикулярно = 0.
 
+            if (m_MobileFirePrimary.Hold == true)
+            {
+                m_TargetShip.Fire(TurretMode.Primary);
+            }
+
+            if (m_MobileFireSecondary.Hold == true)
+            {
+                m_TargetShip.Fire(TurretMode.Secondary);
+            }
+
             m_TargetShip.ThrustControl = /*dir.y;*/ Mathf.Max(0, dot); // Движение вперёд. dot = -1, 0 или +1
             m_TargetShip.TorqueControl = /*dir.x;*/ -dot2; // Разворот
         }
@@ -84,6 +107,16 @@ namespace SpaceShooter
             if (Input.GetKey(KeyCode.D))
             {
                 torque = -1.0f;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                m_TargetShip.Fire(TurretMode.Primary);
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                m_TargetShip.Fire(TurretMode.Secondary);
             }
 
             m_TargetShip.ThrustControl = thrust;

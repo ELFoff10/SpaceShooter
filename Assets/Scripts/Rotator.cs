@@ -1,9 +1,14 @@
 using UnityEngine;
-public class Rotator : MonoBehaviour
+
+namespace SpaceShooter
 {
-    [SerializeField] private Vector3 speed;
-    private void Update()
+    public class Rotator : MonoBehaviour
     {
-        transform.Rotate(speed * Time.deltaTime);
+        [SerializeField] private Vector3 speed;
+        private void Update()
+        {
+            transform.Rotate(speed * Time.deltaTime);
+        }
     }
 }
+

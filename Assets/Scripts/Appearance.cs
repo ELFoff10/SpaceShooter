@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class Appearance : MonoBehaviour
+namespace SpaceShooter
 {
-    [SerializeField] private float m_Time;
-
-    private float m_Timer;
-
-    [SerializeField] private SpriteRenderer m_SpriteRenderer;
-
-    private void Update()
+    public class Appearance : MonoBehaviour
     {
-        m_Timer += Time.deltaTime / m_Time;
+        [SerializeField] private float m_Time;
 
-        if ((int) m_Timer % 2 == 0)
-        {
-            m_SpriteRenderer.GetComponent<SpriteRenderer>().enabled = false;
-            m_SpriteRenderer.GetComponent<BoxCollider2D>().enabled = false;
+        private float m_Timer;
 
-        }
-        if ((int) m_Timer % 2 == 1)
+        [SerializeField] private SpriteRenderer m_SpriteRenderer;
+
+        private void Update()
         {
-            m_SpriteRenderer.GetComponent<SpriteRenderer>().enabled = true;
-            m_SpriteRenderer.GetComponent<BoxCollider2D>().enabled = true;
+            m_Timer += Time.deltaTime / m_Time;
+
+            if ((int)m_Timer % 2 == 0)
+            {
+                m_SpriteRenderer.GetComponent<SpriteRenderer>().enabled = false;
+                m_SpriteRenderer.GetComponent<BoxCollider2D>().enabled = false;
+
+            }
+            if ((int)m_Timer % 2 == 1)
+            {
+                m_SpriteRenderer.GetComponent<SpriteRenderer>().enabled = true;
+                m_SpriteRenderer.GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
     }
 }
