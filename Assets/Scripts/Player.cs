@@ -1,19 +1,16 @@
-using SpaceShooter;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace SpaceShooter
 {
-    public class Player : MonoBehaviour
+    public class Player : SingletonBase<Player>
     {
         [SerializeField] private int m_NumLives; // Кол-во жизней
 
         [SerializeField] private SpaceShip m_Ship; // На сцене
+        public SpaceShip ActiveShip => m_Ship;
 
         [SerializeField] private GameObject m_PlayerShipPrefab; // Префаб
+
 
         [SerializeField] private GameObject m_ShipExplosionPrefab;
 

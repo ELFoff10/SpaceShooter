@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class ImpactEffect : MonoBehaviour
 {
     [SerializeField] private float m_LifeTime;
