@@ -122,13 +122,13 @@ namespace SpaceShooter
 
         [SerializeField] private Turret[] m_Turrets;
 
-        public void Fire(TurretMode mode)
+        public void ShipFire(TurretMode mode)
         {
             foreach (var v in m_Turrets)
             {
                 if (v.Mode == mode)
                 {
-                    v.Fire();
+                    v.TurretFire();
                 }
             }
         }

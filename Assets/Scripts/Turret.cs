@@ -9,10 +9,11 @@ namespace SpaceShooter
 
         [SerializeField] private TurretProperties m_TurretProperties;
 
-        private float m_RefireTimer;
-        public bool CanFire => m_RefireTimer <= 0;
-
         [SerializeField] private SpaceShip m_Ship;
+
+        private float m_RefireTimer; // Задаётся значение в конце метода TurretFire() из m_TurretProperties.RateOfFire
+
+        public bool CanFire => m_RefireTimer <= 0;
 
         private void Update()
         {
@@ -20,11 +21,12 @@ namespace SpaceShooter
                 m_RefireTimer -= Time.deltaTime;
         }
 
-        public void Fire()
+        public void TurretFire()
         {
-            if (m_TurretProperties == null) return;
-
-            if (m_RefireTimer > 0) return; // НЕ ПОНЯЛ! А ТАЙМЕР В МИНУС УХОДИТ И ВСЁ?
+            if (m_TurretProperties == null) return; // Если это класс, то нужно всегда проверять на null
+ 
+            if (m_RefireTimer > 0) return; // Промежуток между спавном снарядов 
+            // Изначально 0, поэтому идём дальше и спавним, а потом когда значение RateOfFire = 0.2, ждём в Update до 0
 
             if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false)
                 return;
@@ -32,9 +34,11 @@ namespace SpaceShooter
             if (m_Ship.DrawAmmo(m_TurretProperties.AmmoUsage) == false)
                 return;
 
-            Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab).GetComponent<Projectile>();
+            Projectile projectile = Instantiate(m_TurretProperties.ProjectilePrefab);
             projectile.transform.position = transform.position;
             projectile.transform.up = transform.up;
+
+            projectile.SetParentShooter(m_Ship);
 
             m_RefireTimer = m_TurretProperties.RateOfFire;
 

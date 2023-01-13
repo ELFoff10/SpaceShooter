@@ -48,7 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TargetShip: {fileID: 0}
   m_MobileJoystick: {fileID: 0}
-  m_ControlMode: 0
+  m_ControlMode: 1
+  m_MobileFirePrimary: {fileID: 0}
+  m_MobileFireSecondary: {fileID: 0}
 --- !u!114 &6225216086682637430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9484e3e2e5b0373479211313c97e6208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
   m_NumLives: 3
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 8805255323009270399, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}

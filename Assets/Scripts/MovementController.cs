@@ -54,10 +54,9 @@ namespace SpaceShooter
         {
             if (m_TargetShip == null) return;
 
-            //база
             if (m_ControlMode == ControlMode.Keyboard)
                 ControlKeyboard();
-            //база
+
             if (m_ControlMode == ControlMode.Mobile)
                 ControlMoblile();
         }
@@ -72,12 +71,12 @@ namespace SpaceShooter
 
             if (m_MobileFirePrimary.Hold == true)
             {
-                m_TargetShip.Fire(TurretMode.Primary);
+                m_TargetShip.ShipFire(TurretMode.Primary);
             }
 
             if (m_MobileFireSecondary.Hold == true)
             {
-                m_TargetShip.Fire(TurretMode.Secondary);
+                m_TargetShip.ShipFire(TurretMode.Secondary);
             }
 
             m_TargetShip.ThrustControl = /*dir.y;*/ Mathf.Max(0, dot); // ƒвижение вперЄд. dot = -1, 0 или +1
@@ -111,12 +110,12 @@ namespace SpaceShooter
 
             if (Input.GetKey(KeyCode.Space))
             {
-                m_TargetShip.Fire(TurretMode.Primary);
+                m_TargetShip.ShipFire(TurretMode.Primary);
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.V))
             {
-                m_TargetShip.Fire(TurretMode.Secondary);
+                m_TargetShip.ShipFire(TurretMode.Secondary);
             }
 
             m_TargetShip.ThrustControl = thrust;

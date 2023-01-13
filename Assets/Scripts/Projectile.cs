@@ -12,16 +12,16 @@ namespace SpaceShooter
 
         [SerializeField] private int m_Damage;
 
-        [SerializeField] private ImpactEffect m_ImpactEffectPrefab;
+        [SerializeField] private ImpactEffect m_ImpactEffectPrefab; // Взрыв, когда снаряд врезается
 
         private float m_Timer;
 
         private void Update()
         {
-            float spetLenght = Time.deltaTime * m_Velocity;
-            Vector2 step = transform.up * spetLenght;
+            float stepLenght = Time.deltaTime * m_Velocity; // Смещение снаряда в каждом кадре
+            Vector2 step = transform.up * stepLenght; // Для рейкаста
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, spetLenght);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
             if (hit)
             {
