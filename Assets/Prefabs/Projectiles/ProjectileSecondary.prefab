@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7196065174053226065}
   - component: {fileID: 1295168503297211569}
   m_Layer: 0
-  m_Name: ProjectileBase
+  m_Name: ProjectileSecondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0916f4c1bd14a684abe5d98c80479a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: 
+  _nickName: MachineGun
   m_Velocity: 10
   m_LifeTime: 1000
-  m_Damage: 500
+  m_Damage: 10
   m_ImpactEffectPrefab: {fileID: 0}
 --- !u!82 &1295168503297211569
 AudioSource:
@@ -230,7 +230,16 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.23966724
+        value: 0.03749695
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.011122242
+        value: 0.12094166
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -238,8 +247,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.04338534
-        value: 0.12727204
+        time: 0.022799248
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -251,8 +260,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5660378, g: 0.32680672, b: 0.30117482, a: 1}
-      key1: {r: 0.8490566, g: 0.16340332, b: 0.16340332, a: 0.4627451}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -268,7 +277,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 42405
+      atime1: 65535
       atime2: 0
       atime3: 0
       atime4: 0
