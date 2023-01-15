@@ -8,7 +8,7 @@ namespace SpaceShooter
     {
         public enum EffectType
         {
-            AddAmmo, AddEnergy
+            AddAmmo, AddEnergy, AddSpeed, AddIndestructible
         }
 
         [SerializeField] private EffectType m_EffectType;
@@ -25,6 +25,16 @@ namespace SpaceShooter
             if (m_EffectType == EffectType.AddAmmo)
             {
                 ship.AddAmmo((int) m_Value);
+            }
+
+            if (m_EffectType == EffectType.AddSpeed)
+            {
+                ship.AddSpeed((int)m_Value);
+            }
+
+            if (m_EffectType == EffectType.AddIndestructible)
+            {
+                ship.AddIndestructible();
             }
         }
     }

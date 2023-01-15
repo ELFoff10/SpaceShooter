@@ -3,7 +3,7 @@ public class ImpactEffect : MonoBehaviour
 {
     [SerializeField] private float m_LifeTime;
 
-    private float m_Timer;
+    private float m_Timer; 
 
     private void Update()
     {

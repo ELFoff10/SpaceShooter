@@ -4,8 +4,7 @@ namespace SpaceShooter
 {
     public enum TurretMode
     {
-        Primary,
-        Secondary
+        Primary, Secondary, HunterRocket, PlasmaWeaponAreaDamage
     }
 
     [CreateAssetMenu]

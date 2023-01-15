@@ -11,7 +11,6 @@ namespace SpaceShooter
 
         [SerializeField] private GameObject m_PlayerShipPrefab; // Префаб
 
-
         [SerializeField] private GameObject m_ShipExplosionPrefab;
 
         [SerializeField] private CameraController m_CameraController;

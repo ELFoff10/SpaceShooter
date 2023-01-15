@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7ec5ef3fdd2fc34e8e9ead3c2ea5a8e, type: 3}
-  m_Name: Primary_AreaDamage_turret_01
+  m_Name: Hunt_base_turret_01
   m_EditorClassIdentifier: 
-  m_Mode: 0
-  m_ProjectilePrefab: {fileID: 7196065174053226065, guid: 06abb2e239e67e54ea8ac148c751c855, type: 3}
-  m_RateOfFire: 0.2
+  m_Mode: 2
+  m_ProjectilePrefab: {fileID: 8232547311801980643, guid: c1ee011bad6441448809174a1b60fec0, type: 3}
+  m_RateOfFire: 1
   m_EnergyUsage: 1
   m_AmmoUsage: 0
   m_LaunchSFX: {fileID: 0}

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7ec5ef3fdd2fc34e8e9ead3c2ea5a8e, type: 3}
-  m_Name: Primary_base_turret_01
+  m_Name: PlasmaAreaDamage_base_turret_01
   m_EditorClassIdentifier: 
-  m_Mode: 0
-  m_ProjectilePrefab: {fileID: 8232547311801980643, guid: 1193c411e95c9b24194dedbeb628ff3d, type: 3}
+  m_Mode: 3
+  m_ProjectilePrefab: {fileID: 3843694139137269892, guid: 66ee5f0654541024c9e2a31b8dd01086, type: 3}
   m_RateOfFire: 1
   m_EnergyUsage: 1
   m_AmmoUsage: 0

@@ -28,8 +28,6 @@ namespace SpaceShooter
         {
             GetComponent<CircleCollider2D>().radius = m_Radius;
         }
-
     #endif
-
     }
 }

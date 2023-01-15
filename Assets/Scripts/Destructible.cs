@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +13,7 @@ namespace SpaceShooter
         /// <summary>
         /// Объект игнориурует повреждения.
         /// </summary>
-        [SerializeField] private bool m_Indestructible;
+        [SerializeField] protected bool m_Indestructible;
         public bool Indestructible => m_Indestructible;
 
         /// <summary>
@@ -25,6 +26,10 @@ namespace SpaceShooter
         /// </summary>
         private int m_CurrentHitPoints;
         public int CurrentHitPoints => m_CurrentHitPoints;
+
+        private static List<Destructible> m_AllDestructibles;
+        public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles;
+
         #endregion
 
         #region Unity Events
@@ -32,6 +37,21 @@ namespace SpaceShooter
         protected virtual void Start()
         {
             m_CurrentHitPoints = m_HitPoints;
+        }
+
+        protected virtual void OnEnable()
+        {
+            if (m_AllDestructibles == null)
+            {
+                m_AllDestructibles = new List<Destructible>();
+            }
+
+            m_AllDestructibles.Add(this);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            m_AllDestructibles.Remove(this);
         }
 
         #endregion

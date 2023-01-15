@@ -113,9 +113,19 @@ namespace SpaceShooter
                 m_TargetShip.ShipFire(TurretMode.Primary);
             }
 
+            if (Input.GetKey(KeyCode.C))
+            {
+                m_TargetShip.ShipFire(TurretMode.HunterRocket);
+            }
+
             if (Input.GetKey(KeyCode.V))
             {
                 m_TargetShip.ShipFire(TurretMode.Secondary);
+            }
+
+            if (Input.GetKey(KeyCode.B))
+            {
+                m_TargetShip.ShipFire(TurretMode.PlasmaWeaponAreaDamage);
             }
 
             m_TargetShip.ThrustControl = thrust;

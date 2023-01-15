@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -44,6 +46,7 @@ namespace SpaceShooter
         /// Сохраненная ссылка на ригид.
         /// </summary>
         private Rigidbody2D m_Rigidbody2D;
+        private int m_Speed;
 
         #region Public API
 
@@ -149,6 +152,17 @@ namespace SpaceShooter
         {
             m_SecondaryAmmo = Mathf.Clamp(m_SecondaryAmmo + ammo, 0, m_MaxAmmo);
         }
+        public void AddSpeed(int speed)
+        {
+            m_Speed = speed;
+            m_Thrust += speed;
+            StartCoroutine(YourCoroutine());   
+        }
+
+        public void AddIndestructible()
+        {
+            m_Indestructible = true;
+        }
 
         private void InitOffensive()
         {
@@ -197,6 +211,12 @@ namespace SpaceShooter
             {
                 m_Turrets[i].AssignLoadout(props);
             }
+        }
+
+        IEnumerator YourCoroutine()
+        {
+            yield return new WaitForSeconds(3f);
+            m_Thrust -= m_Speed;
         }
     }
 }

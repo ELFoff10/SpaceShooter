@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -19,7 +17,6 @@ namespace SpaceShooter
         }
 #if UNITY_EDITOR
         private static Color GizmoColor = new Color(0, 1, 0, 0.3f);
-
 
         private void OnDrawGizmosSelected()
         {
