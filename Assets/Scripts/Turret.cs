@@ -28,7 +28,7 @@ namespace SpaceShooter
             if (m_RefireTimer > 0) return; // Промежуток между спавном снарядов 
             // Изначально 0, поэтому идём дальше и спавним, а потом когда значение RateOfFire = 0.2, ждём в Update до 0
 
-            if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false)
+            if (m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage) == false) // Если метод не DrawEnergy не сработал, то мы return
                 return;
 
             if (m_Ship.DrawAmmo(m_TurretProperties.AmmoUsage) == false)

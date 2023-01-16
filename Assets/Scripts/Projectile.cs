@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -10,9 +11,7 @@ namespace SpaceShooter
 
         [SerializeField] private int m_AreaDamage;
 
-        [SerializeField] private ImpactEffect m_Effect;
-
-        //[SerializeField] private GameObject m_PrefabExplosion;
+        [SerializeField] private ImpactEffect m_Effect; // Создаем на пару сек объект в конце жизни снярада
 
         [SerializeField] private bool isHoming, isAreaDamage = false;
 
@@ -33,7 +32,7 @@ namespace SpaceShooter
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
             if (hit == true)
-            {         
+            {
                 Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
 
                 if (dest != null && dest != m_Parent)
@@ -42,15 +41,16 @@ namespace SpaceShooter
 
                     if (isAreaDamage == true)
                     {
-                        var allAffected = Physics2D.OverlapCircleAll(transform.position, m_Radius);
+                        var allAffected = Physics2D.OverlapCircleAll(transform.position, m_Radius); // Радиус после столкновения
 
                         foreach (var affectObject in allAffected)
-                        {                         
+                        {
+                            // Все Destructible в радиусе, после столкновения снаряда с объектом
                             Destructible destructible = affectObject.transform.root.GetComponent<Destructible>();
 
                             if (destructible != null && destructible != m_Parent)
                             {
-                                destructible.ApplyDamage(m_AreaDamage);
+                                destructible.ApplyDamage(m_Damage);
                             }
                         }
                     }
@@ -70,9 +70,8 @@ namespace SpaceShooter
         private void OnProjectileLifeEnd(Collider2D collider2D, Vector2 vector2)
         {
             Instantiate(m_Effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-
-        }       
+            StartCoroutine(Coroutine());
+        }
 
         public void SetParentShooter(Destructible destructible)
         {
@@ -81,7 +80,7 @@ namespace SpaceShooter
             m_Target = FindNearestDestructableTarget(m_ParentShip);
         }
 
-        private Destructible FindNearestDestructableTarget(SpaceShip spaceShip)
+        private Destructible FindNearestDestructableTarget(SpaceShip spaceShip) // Находит ближайший объект с Destructible
         {
             float maxDist = float.MaxValue;
             Destructible potentialTarget = null;
@@ -108,7 +107,7 @@ namespace SpaceShooter
             return potentialTarget;
         }
 
-        private Vector3 GetDirection()
+        private Vector3 GetDirection() // Направление снаряда, нормализованный вектор
         {
             if (isHoming && m_Target != null)
             {
@@ -119,6 +118,12 @@ namespace SpaceShooter
             {
                 return transform.up;
             }
+        }
+
+        IEnumerator Coroutine()
+        {
+            yield return new WaitForSeconds(0.2f);
+            Destroy(gameObject);
         }
     }
 }

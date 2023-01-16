@@ -4829,7 +4829,7 @@ MonoBehaviour:
   _nickName: 
   m_Velocity: 2
   m_LifeTime: 1000
-  m_Radius: 3
+  m_Radius: 2
   m_Damage: 1000
   m_AreaDamage: 1000
   m_Effect: {fileID: -2271656545967383012, guid: 83884433ca47c0d44b4420f41db6fcd3, type: 3}
@@ -4896,7 +4896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970521568355095217, guid: 81ee56ff4db133c4db970caa3c0a43a1, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1970521568355095217, guid: 81ee56ff4db133c4db970caa3c0a43a1, type: 3}
       propertyPath: RotationModule.curve.minScalar
