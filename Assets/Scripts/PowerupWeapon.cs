@@ -8,7 +8,7 @@ namespace SpaceShooter
 
         protected override void OnPickedUp(SpaceShip ship)
         {
-            ship.AssignWeapon(m_Properties);
+            ship.AddNewWeaponToShip(m_Properties);
         }
     }
 }

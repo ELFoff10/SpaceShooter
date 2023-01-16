@@ -45,10 +45,11 @@ namespace SpaceShooter
             // SFX нужно добавить [Ser] AudioSoure и тут создать клип из m_TurretProperties.AidoiSource.Play
         }
 
-        public void AssignLoadout(TurretProperties properties) // Назначили другие свойства, для бонуса
+        // 
+        public void WeaponReplacement(TurretProperties properties) // Назначили другие свойства, для бонуса
         {
             // Подменили спритблобжект(где по другому стреляет) на время, а потом опять поставили назад
-            if (m_Mode != properties.Mode) return; // нельзя ставить основное оружие во вторичное?
+            if (m_Mode != properties.Mode) return; // Мы проверяем наш Мод, если он равен, то мы меняем, иначе return
 
             m_RefireTimer = 0; // Можно сразу стрелять
 

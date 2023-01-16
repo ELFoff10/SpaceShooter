@@ -204,11 +204,11 @@ namespace SpaceShooter
             return false;
         }
 
-        public void AssignWeapon(TurretProperties props)
+        public void AddNewWeaponToShip(TurretProperties props) // Назначить новый скриптблОбъект вместо текущего оружия
         {
             for (int i = 0; i < m_Turrets.Length; i++)
             {
-                m_Turrets[i].AssignLoadout(props);
+                m_Turrets[i].WeaponReplacement(props);
             }
         }
 

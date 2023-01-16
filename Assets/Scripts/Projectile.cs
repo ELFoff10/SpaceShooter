@@ -70,7 +70,8 @@ namespace SpaceShooter
         private void OnProjectileLifeEnd(Collider2D collider2D, Vector2 vector2)
         {
             Instantiate(m_Effect, transform.position, Quaternion.identity);
-            StartCoroutine(Coroutine());
+            Destroy(gameObject);
+            //StartCoroutine(Coroutine());
         }
 
         public void SetParentShooter(Destructible destructible)
@@ -120,11 +121,11 @@ namespace SpaceShooter
             }
         }
 
-        IEnumerator Coroutine()
-        {
-            yield return new WaitForSeconds(0.2f);
-            Destroy(gameObject);
-        }
+        //IEnumerator Coroutine()
+        //{
+        //    yield return new WaitForSeconds(0.2f);
+        //    
+        //}
     }
 }
 

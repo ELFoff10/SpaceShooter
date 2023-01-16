@@ -4829,7 +4829,7 @@ MonoBehaviour:
   _nickName: 
   m_Velocity: 2
   m_LifeTime: 1000
-  m_Radius: 2
+  m_Radius: 2.5
   m_Damage: 1000
   m_AreaDamage: 1000
   m_Effect: {fileID: -2271656545967383012, guid: 83884433ca47c0d44b4420f41db6fcd3, type: 3}
