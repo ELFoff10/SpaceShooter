@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &150478756747209444
+--- !u!1 &5234925571430686903
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5823770559284649921}
-  - component: {fileID: 8515239109273897831}
-  - component: {fileID: 5653448825870545237}
+  - component: {fileID: 1901252160434132370}
+  - component: {fileID: 4367539913010970932}
+  - component: {fileID: 1352514314595591035}
   m_Layer: 0
-  m_Name: AddEnergyPowerup
+  m_Name: AddSpeedPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5823770559284649921
+--- !u!4 &1901252160434132370
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150478756747209444}
+  m_GameObject: {fileID: 5234925571430686903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: -1.75, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4520255208462108169}
+  - {fileID: 8361925129779448922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8515239109273897831
+--- !u!58 &4367539913010970932
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150478756747209444}
+  m_GameObject: {fileID: 5234925571430686903}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -50,21 +50,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5653448825870545237
+--- !u!114 &1352514314595591035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150478756747209444}
+  m_GameObject: {fileID: 5234925571430686903}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e096e568b6ee43ac5ce7cb5db7015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectType: 1
-  m_Value: 20
---- !u!1 &3983149875118886994
+  m_EffectType: 2
+  m_Value: 6000
+--- !u!1 &9076537785465084417
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,8 +72,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4520255208462108169}
-  - component: {fileID: 7233922370001556526}
+  - component: {fileID: 8361925129779448922}
+  - component: {fileID: 3374503036501433981}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -81,28 +81,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4520255208462108169
+--- !u!4 &8361925129779448922
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3983149875118886994}
+  m_GameObject: {fileID: 9076537785465084417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5823770559284649921}
+  m_Father: {fileID: 1901252160434132370}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7233922370001556526
+--- !u!212 &3374503036501433981
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3983149875118886994}
+  m_GameObject: {fileID: 9076537785465084417}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -137,8 +137,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90cb47e1e5983004babe76e6f19d2cd4, type: 3}
-  m_Color: {r: 0.2145959, g: 0.8301887, b: 0.81068724, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0826bfd1f8a9035468c9d586fc5435c5, type: 3}
+  m_Color: {r: 0.8773585, g: 0.7482378, b: 0.7482378, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

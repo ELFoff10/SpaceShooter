@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -55,9 +52,9 @@ namespace SpaceShooter
             {
                 int index = Random.Range(0, m_EntityPrefabs.Length);
 
-                GameObject e = Instantiate(m_EntityPrefabs[index].gameObject);
+                GameObject gameObject = Instantiate(m_EntityPrefabs[index].gameObject);
 
-                e.transform.position = m_Area.GetRandomInsideZone();
+                gameObject.transform.position = m_Area.GetRandomInsideZone();
             }
         }
     }

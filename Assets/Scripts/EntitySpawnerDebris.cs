@@ -22,11 +22,6 @@ namespace SpaceShooter
             }
         }
 
-        void Update()
-        {
-
-        }
-
         private void SpawnDebris()
         {
             int index = Random.Range(0, m_DebrisPrefabs.Length);
@@ -34,17 +29,19 @@ namespace SpaceShooter
             GameObject debris = Instantiate(m_DebrisPrefabs[index].gameObject);
 
             debris.transform.position = m_Area.GetRandomInsideZone();
-            debris.GetComponent<Destructible>().EventOnDeath.AddListener(OnDebrisDead);
 
-            Rigidbody2D rb = debris.GetComponent<Rigidbody2D>();
+            // Слушаем, когда уничтожается объект
+            debris.GetComponent<Destructible>().EventOnDeath.AddListener(OnDebrisLifeEnd); 
 
-            if (rb != null && m_RandomSpeed > 0)
+            Rigidbody2D rigidbody2D = debris.GetComponent<Rigidbody2D>();
+
+            if (rigidbody2D != null && m_RandomSpeed > 0)
             {
-                rb.velocity = (Vector2) Random.insideUnitCircle * m_RandomSpeed;
+                rigidbody2D.velocity = Random.insideUnitCircle * m_RandomSpeed; 
             }
         }
 
-        private void OnDebrisDead()
+        private void OnDebrisLifeEnd()
         {
             SpawnDebris();
         }
