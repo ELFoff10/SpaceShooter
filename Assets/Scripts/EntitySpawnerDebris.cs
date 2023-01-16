@@ -8,9 +8,9 @@ namespace SpaceShooter
     {
         [SerializeField] private Destructible[] m_DebrisPrefabs;
 
-        [SerializeField] private int m_NumDebris;
-
         [SerializeField] private CircleArea m_Area;
+
+        [SerializeField] private int m_NumDebris;
 
         [SerializeField] private float m_RandomSpeed;
 

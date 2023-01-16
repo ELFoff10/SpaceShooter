@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TargetShip: {fileID: 0}
   m_MobileJoystick: {fileID: 0}
-  m_ControlMode: 1
   m_MobileFirePrimary: {fileID: 0}
   m_MobileFireSecondary: {fileID: 0}
+  m_ControlMode: 0
 --- !u!114 &6225216086682637430
 MonoBehaviour:
   m_ObjectHideFlags: 0

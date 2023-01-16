@@ -1,4 +1,3 @@
-using SpaceShooter;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -15,6 +14,7 @@ namespace SpaceShooter
         //{
         //    audio = GetComponent<AudioSource>();
         //}
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (IsReceive == true) return;

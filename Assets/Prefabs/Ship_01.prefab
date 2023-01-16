@@ -9866,7 +9866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mode: 1
-  m_TurretProperties: {fileID: 11400000, guid: f7ad8ca799181c043977c3043956f80c, type: 2}
+  m_TurretProperties: {fileID: 11400000, guid: 17ae17053437c5640bdb054f7cda0e8a, type: 2}
   m_Ship: {fileID: 8805255323009270396}
 --- !u!1 &1922276519
 GameObject:

@@ -15,10 +15,9 @@ namespace SpaceShooter
 
         [SerializeField] private VirtualJoystick m_MobileJoystick;
 
-        [SerializeField] private ControlMode m_ControlMode;
+        [SerializeField] private PointerClickHold m_MobileFirePrimary, m_MobileFireSecondary;
 
-        [SerializeField] private PointerClickHold m_MobileFirePrimary;
-        [SerializeField] private PointerClickHold m_MobileFireSecondary;
+        [SerializeField] private ControlMode m_ControlMode;
 
         private void Start()
         {          

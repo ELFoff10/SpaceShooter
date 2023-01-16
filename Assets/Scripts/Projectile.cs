@@ -4,19 +4,17 @@ namespace SpaceShooter
 {
     public class Projectile : Entity
     {
-        [SerializeField] private float m_Velocity;
-
-        [SerializeField] private float m_LifeTime;
+        [SerializeField] private float m_Velocity, m_LifeTime, m_Radius;
 
         [SerializeField] private int m_Damage;
 
-        [SerializeField] private ImpactEffect m_ImpactEffectPrefab; // Взрыв, когда снаряд врезается
+        [SerializeField] private int m_AreaDamage;
 
-        [SerializeField] private bool isHoming = false;
+        [SerializeField] private ImpactEffect m_Effect;
 
-        [SerializeField] private bool isAreaDamage = false;
+        //[SerializeField] private GameObject m_PrefabExplosion;
 
-        [SerializeField] private float m_Radius = 10000;
+        [SerializeField] private bool isHoming, isAreaDamage = false;
 
         private float m_Timer;
 
@@ -28,15 +26,13 @@ namespace SpaceShooter
         {
             float stepLenght = Time.deltaTime * m_Velocity; // Смещение снаряда в каждом кадре
 
-            //if (m_TurretProperties.Mode == TurretMode.HunterRocket)
-            //{
-            //    transform.position = Vector2.MoveTowards(transform.position, m_Target.transform.position, stepLenght);                
-            //}
-            Vector2 step = GetDirection() * stepLenght; // Для рейкаста
+            Vector2 step = GetDirection() * stepLenght;
 
+            //Raycast выпускает луч впереди снаряда и если впереди что то есть и он Destructible, то мы наносим ему урон.
+            //В Raycast мы указываем дистакицию луча и т.к stepLenght = 3.3, если Velocity 10, то луч короткий 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
-            if (hit)
+            if (hit == true)
             {         
                 Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
 
@@ -49,10 +45,12 @@ namespace SpaceShooter
                         var allAffected = Physics2D.OverlapCircleAll(transform.position, m_Radius);
 
                         foreach (var affectObject in allAffected)
-                        {                           
-                            if (affectObject == affectObject.transform.root.GetComponent<Destructible>())
+                        {                         
+                            Destructible destructible = affectObject.transform.root.GetComponent<Destructible>();
+
+                            if (destructible != null && destructible != m_Parent)
                             {
-                                affectObject.transform.root.GetComponent<Destructible>().ApplyDamage(m_Damage);
+                                destructible.ApplyDamage(m_AreaDamage);
                             }
                         }
                     }
@@ -69,15 +67,17 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
-        private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
+        private void OnProjectileLifeEnd(Collider2D collider2D, Vector2 vector2)
         {
+            Instantiate(m_Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+
         }       
 
-        public void SetParentShooter(Destructible parent)
+        public void SetParentShooter(Destructible destructible)
         {
-            m_Parent = parent;
-            m_ParentShip = parent.GetComponent<SpaceShip>();
+            m_Parent = destructible;
+            m_ParentShip = destructible.GetComponent<SpaceShip>();
             m_Target = FindNearestDestructableTarget(m_ParentShip);
         }
 
@@ -87,7 +87,6 @@ namespace SpaceShooter
             Destructible potentialTarget = null;
 
             // Перебираем все разрушаемые объекты сцены.
-
             foreach (var destructible in Destructible.AllDestructibles)
             {
                 if (destructible.GetComponent<SpaceShip>() == spaceShip) continue;

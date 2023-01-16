@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 7246568107681040315}
   - component: {fileID: 7246568107681040308}
   m_Layer: 0
-  m_Name: Phobos
+  m_Name: SputnikPhobos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7246568108487520361
 Transform:
   m_ObjectHideFlags: 0

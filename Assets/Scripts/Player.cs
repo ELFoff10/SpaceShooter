@@ -9,9 +9,7 @@ namespace SpaceShooter
         [SerializeField] private SpaceShip m_Ship; // На сцене
         public SpaceShip ActiveShip => m_Ship;
 
-        [SerializeField] private GameObject m_PlayerShipPrefab; // Префаб
-
-        [SerializeField] private GameObject m_ShipExplosionPrefab;
+        [SerializeField] private GameObject m_PlayerShipPrefab, m_ShipExplosionPrefab; 
 
         [SerializeField] private CameraController m_CameraController;
 

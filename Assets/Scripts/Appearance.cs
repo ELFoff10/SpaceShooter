@@ -4,11 +4,11 @@ namespace SpaceShooter
 {
     public class Appearance : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer m_SpriteRenderer;
+
         [SerializeField] private float m_Time;
 
         private float m_Timer;
-
-        [SerializeField] private SpriteRenderer m_SpriteRenderer;
 
         private void Update()
         {
