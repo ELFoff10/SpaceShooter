@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3698731519274265730}
   - component: {fileID: 1317124667426429553}
-  - component: {fileID: 4771654237622157973}
+  - component: {fileID: 6799757532591007742}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900535598926002561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4771654237622157973
-CircleCollider2D:
+--- !u!60 &6799757532591007742
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,9 +98,31 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.35745588, y: -0.13415624}
-  serializedVersion: 2
-  m_Radius: 2.3214078
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.26, y: 4.17}
+    newSize: {x: 0.88, y: 1.05}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.4320974, y: -1.3742248}
+      - {x: -0.8829959, y: -1.5033488}
+      - {x: 0.7365498, y: -1.6233362}
+      - {x: 1.1572056, y: -1.2821324}
+      - {x: 1.9303337, y: -1.0011411}
+      - {x: 2.3481326, y: -0.66305155}
+      - {x: 2.654491, y: 0.27061564}
+      - {x: 2.3568244, y: 0.5767107}
+      - {x: 1.2974619, y: 0.9796542}
+      - {x: 0.15291017, y: 1.4004607}
+      - {x: -1.2939101, y: 1.1203192}
+      - {x: -1.7288386, y: 0.6235734}
+      - {x: -1.8593222, y: -0.81195426}
 --- !u!1 &3484625909613882471
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +134,6 @@ GameObject:
   - component: {fileID: 5931513553812814328}
   - component: {fileID: 5598529443513091577}
   - component: {fileID: 4396570139703932543}
-  - component: {fileID: -820758839417067478}
   m_Layer: 0
   m_Name: AsteroidSmall
   m_TagString: Untagged
@@ -127,7 +148,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3484625909613882471}
-  m_LocalRotation: {x: -0, y: -0, z: 0.60876125, w: 0.7933535}
+  m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -175,15 +196,3 @@ MonoBehaviour:
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-820758839417067478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3484625909613882471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb89e521628646844b6b99f51d1fa5a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

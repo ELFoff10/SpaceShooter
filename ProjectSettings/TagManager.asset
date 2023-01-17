@@ -7,6 +7,7 @@ TagManager:
   - WorldBoundary
   - FinishTag
   - Ship
+  - Asteroid
   layers:
   - Default
   - TransparentFX

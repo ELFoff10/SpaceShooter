@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
 {
-    public class EntitySpawnerDebris : MonoBehaviour
+    public class SpawnerEntityDebris : MonoBehaviour
     {
         [SerializeField] private Destructible[] m_DebrisPrefabs;
 
@@ -26,9 +24,13 @@ namespace SpaceShooter
         {
             int index = Random.Range(0, m_DebrisPrefabs.Length);
 
+            float random = Random.Range(0, 360);
+
             GameObject debris = Instantiate(m_DebrisPrefabs[index].gameObject);
 
             debris.transform.position = m_Area.GetRandomInsideZone();
+
+            debris.transform.localRotation = Quaternion.Euler(0, 0, random);
 
             // Слушаем, когда уничтожается объект
             debris.GetComponent<Destructible>().EventOnDeath.AddListener(OnDebrisLifeEnd); 

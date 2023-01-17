@@ -9,6 +9,7 @@ namespace SpaceShooter
     /// </summary>
     public class Destructible : Entity
     {
+        [SerializeField] private ImpactEffect m_ImpactEffect;
         #region Properties
         /// <summary>
         /// Объект игнориурует повреждения.
@@ -83,7 +84,12 @@ namespace SpaceShooter
         {
             Destroy(gameObject);
 
-            m_EventOnDeath?.Invoke();
+            m_EventOnDeath?.Invoke();   
+
+            if (gameObject.tag == "Asteroid")
+            {
+                Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
+            }
         }
 
         [SerializeField] private UnityEvent m_EventOnDeath;

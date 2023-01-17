@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SpaceShooter
 {
-    public class EntitySpawner : MonoBehaviour
+    public class SpawnerEntity : MonoBehaviour
     {
         public enum SpawnMode
         {
@@ -52,7 +52,11 @@ namespace SpaceShooter
             {
                 int index = Random.Range(0, m_EntityPrefabs.Length);
 
+                float random = Random.Range(0, 360);
+
                 GameObject gameObject = Instantiate(m_EntityPrefabs[index].gameObject);
+
+                gameObject.transform.localRotation = Quaternion.Euler(0, 0, random);
 
                 gameObject.transform.position = m_Area.GetRandomInsideZone();
             }

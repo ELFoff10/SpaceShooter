@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: 
-  m_Velocity: 1
+  m_Velocity: 4
   m_LifeTime: 1000
   m_Radius: 10000
   m_Damage: 10000
