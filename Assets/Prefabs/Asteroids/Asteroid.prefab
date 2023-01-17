@@ -184,8 +184,8 @@ MonoBehaviour:
   m_DebrisPrefabs:
   - {fileID: 4396570139703932543, guid: d74958f3d2b7d474db707757b32f9979, type: 3}
   m_Area: {fileID: 7625194629160385337}
-  m_NumDebris: 6
-  m_RandomSpeed: 2
+  m_NumDebris: 9
+  m_RandomSpeed: 3
 --- !u!1 &3484625909613882471
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 5931513553812814328}
   - component: {fileID: 5598529443513091577}
   - component: {fileID: 4396570139703932543}
+  - component: {fileID: -1927992747705710377}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -273,3 +274,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &-1927992747705710377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484625909613882471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e2c33965867b64bab2c84747c631ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

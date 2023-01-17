@@ -10224,7 +10224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432274387555762861
 Transform:
   m_ObjectHideFlags: 0
@@ -19980,6 +19980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: Player
+  m_ImpactEffect: {fileID: 0}
   m_Indestructible: 0
   m_HitPoints: 100
   m_EventOnDeath:
@@ -19994,6 +19995,10 @@ MonoBehaviour:
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
   m_MaxAngularVelocity: 360
+  m_Turrets: []
+  m_MaxEnergy: 0
+  m_MaxAmmo: 0
+  m_EnergyRegenPerSecond: 0
 --- !u!114 &1320862286869509553
 MonoBehaviour:
   m_ObjectHideFlags: 0

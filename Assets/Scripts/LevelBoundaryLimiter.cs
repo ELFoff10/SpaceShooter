@@ -4,7 +4,7 @@ namespace SpaceShooter
 {
     /// <summary>
     /// Ограничитель позиции. Работает в связке со скриптом LevelBoundary если таковой имеется на сцене.
-    /// Кадиется на объект который надо ограничить.
+    /// Вешаем на объект который надо ограничить.
     /// </summary>
     public class LevelBoundaryLimiter : MonoBehaviour
     {

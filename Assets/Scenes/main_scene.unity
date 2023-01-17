@@ -415,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 6497037372214737083, guid: d478d94f048669e4dbaaefc2b696068e, type: 3}
       propertyPath: m_EntityPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 852251173}
+      objectReference: {fileID: 7522744553489932984, guid: 875941ad482adca458ecd86038140ebf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d478d94f048669e4dbaaefc2b696068e, type: 3}
 --- !u!1001 &1056445370
@@ -1280,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_Ship
       value: 
       objectReference: {fileID: 852251173}
+    - target: {fileID: 6225216086682637431, guid: d72454c10f831df4785c7dfd227c2aa5, type: 3}
+      propertyPath: m_NumLives
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72454c10f831df4785c7dfd227c2aa5, type: 3}
 --- !u!1001 &7246568108147694835
