@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 namespace SpaceShooter
 {
@@ -11,27 +8,38 @@ namespace SpaceShooter
     {
         public enum AIBehaviour
         {
-            Null, Patrol
+            Null, Patrol //Points, EvadeCollision
         }
 
         [SerializeField] private AIBehaviour m_AIBehaviour;
 
-        [SerializeField] private AIPointPatrol m_PointPatrol;
+        [SerializeField] private AIPointPatrol m_AIPointPatrol;
 
         [Range(0f, 1f)]
         [SerializeField] private float m_NavigationLinear, m_NavigationAngular; // Скорость перемещения и вращения
 
-        [SerializeField] private float m_TimeRandomMovePoint, m_TimeFindNewTarget, m_TimeShootDelay;
+        [SerializeField] private float m_TimeRandomMovePointPatrol, m_TimeFindNewTarget, m_TimeShootDelay;
 
         [SerializeField] private float m_RaycastLength; // Длина Рэйкаста
 
-        private SpaceShip m_SpaceShip;
+        [SerializeField] private bool m_IsControlledPatrol;
 
-        private Vector3 m_MoveTargetPosition; // Точка назначения, куда двигается наш корабль
+        [SerializeField] private Transform m_Target_1, m_Target_2, m_Target_3, m_Target_4;
+
+        private bool m_ReachedTheTarget_1 = false;
+        private bool m_ReachedTheTarget_2 = false;
+        private bool m_ReachedTheTarget_3 = false;
+
 
         private Destructible m_SelectedTarget; // Выбранная цель
 
-        private Timer m_RandomizeDirectionTimer, m_FiteTimer, m_FindNewTargetTimer;
+        private SpaceShip m_SpaceShip;
+
+        private Vector3 m_MoveToTargetPosition; // Точка назначения, куда двигается наш корабль
+
+        private Timer m_TimerRandomizeDirection, m_TimerFire, m_TimerFindNewTarget;
+
+
 
         private void Start()
         {
@@ -74,29 +82,74 @@ namespace SpaceShooter
             {
                 if (m_SelectedTarget != null)
                 {
-                    m_MoveTargetPosition = m_SelectedTarget.transform.position;
+                    m_MoveToTargetPosition = m_SelectedTarget.transform.position;
                 }
                 else
                 {
-                    if (m_PointPatrol != null)
+                    if (m_IsControlledPatrol == true)
                     {
-                        bool isInsidePatrolZone = (m_PointPatrol.transform.position - transform.position).sqrMagnitude
-                                                   < m_PointPatrol.Radius * m_PointPatrol.Radius;
-                        if (isInsidePatrolZone == true)
+                        if (m_ReachedTheTarget_1 == false)
                         {
-                            if (m_RandomizeDirectionTimer.IsFinished == true)
-                            {
-                                Vector2 newPoint = UnityEngine.Random.onUnitSphere 
-                                                   * m_PointPatrol.Radius + m_PointPatrol.transform.position;
-
-                                m_MoveTargetPosition = newPoint;
-
-                                m_RandomizeDirectionTimer.StartTime(m_TimeRandomMovePoint);
-                            }
+                            m_MoveToTargetPosition = m_Target_1.transform.position;
                         }
-                        else
+                        
+                        if (transform.position == m_Target_1.transform.position)
                         {
-                            m_MoveTargetPosition = m_PointPatrol.transform.position;
+                            m_ReachedTheTarget_1 = true;            
+                        }
+
+                        if (m_ReachedTheTarget_1 == true)
+                        {
+                            m_MoveToTargetPosition = m_Target_2.transform.position;
+                        }
+
+                        if (transform.position == m_Target_2.transform.position)
+                        {
+                            m_ReachedTheTarget_2 = true;
+                        }
+
+                        if (m_ReachedTheTarget_2 == true)
+                        {
+                            m_MoveToTargetPosition = m_Target_3.transform.position;
+                        }
+
+                        if (transform.position == m_Target_3.transform.position)
+                        {
+                            m_ReachedTheTarget_3 = true;
+                        }
+
+                        if (m_ReachedTheTarget_3 == true)
+                        {
+                            m_MoveToTargetPosition = m_Target_4.transform.position;
+                        }
+
+                        if (transform.position == m_Target_4.transform.position)
+                        {
+                            m_AIBehaviour = AIBehaviour.Null;
+                        }
+                    }
+                    else
+                    {
+                        if (m_AIPointPatrol != null)
+                        {
+                            bool isInsidePatrolZone = (m_AIPointPatrol.transform.position - transform.position).sqrMagnitude
+                                                       < m_AIPointPatrol.PatrolRadius * m_AIPointPatrol.PatrolRadius;
+                            if (isInsidePatrolZone == true)
+                            {
+                                if (m_TimerRandomizeDirection.IsFinished == true)
+                                {
+                                    Vector2 newPoint = UnityEngine.Random.onUnitSphere
+                                                       * m_AIPointPatrol.PatrolRadius + m_AIPointPatrol.transform.position;
+
+                                    m_MoveToTargetPosition = newPoint;
+
+                                    m_TimerRandomizeDirection.StartTime(m_TimeRandomMovePointPatrol);
+                                }
+                            }
+                            else
+                            {
+                                m_MoveToTargetPosition = m_AIPointPatrol.transform.position;
+                            }
                         }
                     }
                 }
@@ -107,7 +160,7 @@ namespace SpaceShooter
         {
             if (Physics2D.Raycast(transform.position, transform.up, m_RaycastLength) == true)
             {
-                m_MoveTargetPosition = transform.position + transform.right * 100.0f;
+                m_MoveToTargetPosition = transform.position + transform.right * 100.0f;
             }
         }
 
@@ -117,7 +170,7 @@ namespace SpaceShooter
 
             // Тут нам нужно вращение, но оно имеет 2 параметра int - это 0 и 1,
             // а наш m_NavigationAngular флоат от 0 до 1
-            m_SpaceShip.TorqueControl = ComputeTorqueNormalized(m_MoveTargetPosition, m_SpaceShip.transform) 
+            m_SpaceShip.TorqueControl = ComputeTorqueNormalized(m_MoveToTargetPosition, m_SpaceShip.transform)
                                                                 * m_NavigationAngular;
         }
 
@@ -146,11 +199,11 @@ namespace SpaceShooter
 
         private void ActionFindNewAttackTarget()
         {
-            if (m_FindNewTargetTimer.IsFinished == true)
+            if (m_TimerFindNewTarget.IsFinished == true)
             {
                 m_SelectedTarget = FindNearestDestructibleTarget();
 
-                m_FindNewTargetTimer.StartTime(m_TimeShootDelay);
+                m_TimerFindNewTarget.StartTime(m_TimeShootDelay);
             }
         }
 
@@ -158,11 +211,11 @@ namespace SpaceShooter
         {
             if (m_SelectedTarget != null)
             {
-                if (m_FiteTimer.IsFinished == true)
+                if (m_TimerFire.IsFinished == true)
                 {
                     m_SpaceShip.ShipFire(TurretMode.Primary);
 
-                    m_FiteTimer.StartTime(m_TimeShootDelay);
+                    m_TimerFire.StartTime(m_TimeShootDelay);
                 }
             }
         }
@@ -175,7 +228,7 @@ namespace SpaceShooter
 
             foreach (var v in Destructible.AllDestructibles)
             {
-                if (v.GetComponent<SpaceShip>() == m_SpaceShip) 
+                if (v.GetComponent<SpaceShip>() == m_SpaceShip)
                     continue;
 
                 if (v.TeamId == Destructible.TeamIdNeutral)
@@ -190,7 +243,7 @@ namespace SpaceShooter
                 {
                     maxDist = dist;
                     potencialTarget = v;
-                }                
+                }
             }
 
             return potencialTarget;
@@ -200,26 +253,26 @@ namespace SpaceShooter
 
         private void InitTimers() // Инициализируем
         {
-            m_RandomizeDirectionTimer = new Timer(m_TimeRandomMovePoint);
+            m_TimerRandomizeDirection = new Timer(m_TimeRandomMovePointPatrol);
 
-            m_FiteTimer = new Timer(m_TimeShootDelay);
+            m_TimerFire = new Timer(m_TimeShootDelay);
 
-            m_FindNewTargetTimer = new Timer(m_TimeFindNewTarget);
+            m_TimerFindNewTarget = new Timer(m_TimeFindNewTarget);
         }
         private void UpdateTimers()
         {
-            m_RandomizeDirectionTimer.RemoveTime(Time.deltaTime);
+            m_TimerRandomizeDirection.RemoveTime(Time.deltaTime);
 
-            m_FiteTimer.RemoveTime(Time.deltaTime);
+            m_TimerFire.RemoveTime(Time.deltaTime);
 
-            m_FindNewTargetTimer.RemoveTime(Time.deltaTime);
+            m_TimerFindNewTarget.RemoveTime(Time.deltaTime);
         }
 
         public void SetPatrolBehaviour(AIPointPatrol point) // 
         {
             m_AIBehaviour = AIBehaviour.Patrol;
 
-            m_PointPatrol = point;
+            m_AIPointPatrol = point;
         }
 
         #endregion

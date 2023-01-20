@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace SpaceShooter
 {
@@ -16,6 +18,8 @@ namespace SpaceShooter
         [SerializeField] private bool isHoming, isAreaDamage = false;
 
         private float m_Timer;
+
+        private bool m_IsPlayer;
 
         private SpaceShip m_ParentShip;
         private Destructible m_Target;
@@ -38,6 +42,11 @@ namespace SpaceShooter
                 if (dest != null && dest != m_Parent)
                 {
                     dest.ApplyDamage(m_Damage);
+
+                    if (m_IsPlayer && dest.CurrentHitPoints <= 0)
+                    {
+                        Player.Instance.AddScore(dest.m_ScoreValue);
+                    }
 
                     if (isAreaDamage == true)
                     {
@@ -79,6 +88,7 @@ namespace SpaceShooter
             m_Parent = destructible;
             m_ParentShip = destructible.GetComponent<SpaceShip>();
             m_Target = FindNearestDestructableTarget(m_ParentShip);
+            m_IsPlayer = m_Parent == Player.Instance.ActiveShip;
         }
 
         private Destructible FindNearestDestructableTarget(SpaceShip spaceShip) // Находит ближайший объект с Destructible
