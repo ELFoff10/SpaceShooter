@@ -44,7 +44,7 @@ namespace SpaceShooter
 
             m_MovementController.SetTargetShip(m_Ship);
 
-            //m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
 
         #region Score

@@ -11,6 +11,8 @@ namespace SpaceShooter
     {
         [SerializeField] private ImpactEffect m_ImpactEffect;
 
+        [SerializeField] private bool m_EffectAvailable;
+
         #region Properties
         /// <summary>
         /// Объект игнориурует повреждения.
@@ -82,10 +84,10 @@ namespace SpaceShooter
 
             m_EventOnDeath?.Invoke();
 
-            if (gameObject.tag == "Asteroid")
+            if (m_EffectAvailable == true)
             {
                 Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
-            }
+            }            
         }
 
         //private static HashSet<Destructible> m_AllDestructibles; похоже на List

@@ -24,6 +24,8 @@ namespace SpaceShooter
 
         [SerializeField] public GameObject[] m_PointsToFly;
 
+        private float m_Coefficient = 8;
+
         private Destructible m_SelectedTarget; // ¬ыбранна€ цель
 
         private SpaceShip m_SpaceShip;
@@ -46,8 +48,6 @@ namespace SpaceShooter
             UpdateTimers();
 
             UpdateAI();
-
-            Debug.Log(m_FlyingPoints);
         }
 
         private void UpdateAI()
@@ -75,17 +75,14 @@ namespace SpaceShooter
             }
         }
 
-        // –еализовать патрулирование по заданному маршруту.
-        // ћожно сделать набором точек патрулировани€, и когда корабль влетает в очередную,
-        // то установить точку патрулировани€ на следующую, например, в методе ActionFindNewMovePosition.
         private void ActionFindNewPosition()
         {
             if (m_AIBehaviour == AIBehaviour.Patrol)
             {
                 if (m_SelectedTarget != null)
                 {
-                    m_MoveToTargetPosition = m_SelectedTarget.transform.position;  /*+ (m_SelectedTarget.transform.up * Player.Instance.ActiveShip.ThrustControl);
-                    Debug.Log(Player.Instance.ActiveShip.ThrustControl);*/
+                    m_MoveToTargetPosition = m_SelectedTarget.transform.position 
+                    + (m_SelectedTarget.transform.up * (Player.Instance.ActiveShip.ThrustControl * m_Coefficient));
                 }
 
                 else
