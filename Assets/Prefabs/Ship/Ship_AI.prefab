@@ -186,13 +186,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AIBehaviour: 1
-  m_PointPatrol: {fileID: 0}
-  m_NavigationLinear: 0.211
-  m_NavigationAngular: 0.213
-  m_TimeRandomMovePoint: 5
-  m_TimeFindNewTarget: 3.24
-  m_TimeShootDelay: 3.58
-  m_RaycastLength: 20
+  m_AIPointPatrol: {fileID: 0}
+  m_NavigationLinear: 0.157
+  m_NavigationAngular: 0.146
+  m_TimeRandomMovePointPatrol: 4
+  m_TimeFindNewTarget: 4
+  m_TimeShootDelay: 4
+  m_RaycastLength: 4
+  m_PointsToFly: []
+  m_FlyingPoints: 0
 --- !u!114 &178513544225651060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,11 +210,12 @@ MonoBehaviour:
   _nickName: Player
   m_ImpactEffect: {fileID: 0}
   m_Indestructible: 0
-  m_HitPoints: 100
-  m_TeamId: 1
+  m_HitPoints: 1000000
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_ScoreValue: 20
   m_ParticleSystemforward: {fileID: 7138217376177620918}
   m_ParticleSystemforward_1: {fileID: 7138217376414549411}
   m_ParticleSystemBack: {fileID: 7138217375371877446}
@@ -244,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6937f34cf84fe094da5d075109c97256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VelocityDamageModifier: 0
+  m_VelocityDamageModifier: 10
   m_DamageConstant: 1000
 --- !u!114 &5892990347052193036
 MonoBehaviour:

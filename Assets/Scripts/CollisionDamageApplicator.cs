@@ -6,6 +6,8 @@ namespace SpaceShooter
     {
         public static string IgnoreTag = "WorldBoundary";
 
+        public static string PointTag = "Point";
+
         [SerializeField] private float m_VelocityDamageModifier;
 
         [SerializeField] private float m_DamageConstant;
@@ -13,6 +15,17 @@ namespace SpaceShooter
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.transform.tag == IgnoreTag) return;
+
+            //var aiController = transform.root.GetComponent<AIController>();
+
+            //if (aiController != null)
+            //{
+            //    if (collision.transform.tag == PointTag)
+            //    {
+            //        aiController.Increase();
+            //        Debug.Log(collision.transform.name);
+            //    }
+            //}
 
             var destructible = transform.root.GetComponent<Destructible>(); // root главный родительский объект
 

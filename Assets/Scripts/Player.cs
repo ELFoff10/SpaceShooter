@@ -43,6 +43,8 @@ namespace SpaceShooter
             m_CameraController.SetTarget(m_Ship.transform);
 
             m_MovementController.SetTargetShip(m_Ship);
+
+            //m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
 
         #region Score

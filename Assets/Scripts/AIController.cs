@@ -8,7 +8,7 @@ namespace SpaceShooter
     {
         public enum AIBehaviour
         {
-            Null, Patrol //Points, EvadeCollision
+            Null, Patrol, Points//, EvadeCollision
         }
 
         [SerializeField] private AIBehaviour m_AIBehaviour;
@@ -22,14 +22,7 @@ namespace SpaceShooter
 
         [SerializeField] private float m_RaycastLength; // Длина Рэйкаста
 
-        [SerializeField] private bool m_IsControlledPatrol;
-
-        [SerializeField] private Transform m_Target_1, m_Target_2, m_Target_3, m_Target_4;
-
-        private bool m_ReachedTheTarget_1 = false;
-        private bool m_ReachedTheTarget_2 = false;
-        private bool m_ReachedTheTarget_3 = false;
-
+        [SerializeField] public GameObject[] m_PointsToFly;
 
         private Destructible m_SelectedTarget; // Выбранная цель
 
@@ -39,7 +32,7 @@ namespace SpaceShooter
 
         private Timer m_TimerRandomizeDirection, m_TimerFire, m_TimerFindNewTarget;
 
-
+        public int m_FlyingPoints;
 
         private void Start()
         {
@@ -53,11 +46,13 @@ namespace SpaceShooter
             UpdateTimers();
 
             UpdateAI();
+
+            Debug.Log(m_FlyingPoints);
         }
 
         private void UpdateAI()
         {
-            if (m_AIBehaviour == AIBehaviour.Patrol)
+            if (m_AIBehaviour == AIBehaviour.Patrol || m_AIBehaviour == AIBehaviour.Points)
             {
                 UpdateBehaviourPatrol();
             }
@@ -65,13 +60,20 @@ namespace SpaceShooter
 
         private void UpdateBehaviourPatrol()
         {
-            ActionFindNewPosition();
-            ActionControlShip();
-            ActionFindNewAttackTarget();
-            ActionFire();
-            ActionEvadeCollision();
+            if (m_AIBehaviour == AIBehaviour.Points)
+            {
+                ActionFindNewPosition();
+                ActionControlShip();
+            }
+            else
+            {
+                ActionFindNewPosition();
+                ActionControlShip();
+                ActionFindNewAttackTarget();
+                ActionFire();
+                ActionEvadeCollision();
+            }
         }
-
 
         // Реализовать патрулирование по заданному маршруту.
         // Можно сделать набором точек патрулирования, и когда корабль влетает в очередную,
@@ -82,76 +84,43 @@ namespace SpaceShooter
             {
                 if (m_SelectedTarget != null)
                 {
-                    m_MoveToTargetPosition = m_SelectedTarget.transform.position;
+                    m_MoveToTargetPosition = m_SelectedTarget.transform.position;  /*+ (m_SelectedTarget.transform.up * Player.Instance.ActiveShip.ThrustControl);
+                    Debug.Log(Player.Instance.ActiveShip.ThrustControl);*/
                 }
+
                 else
                 {
-                    if (m_IsControlledPatrol == true)
+                    if (m_AIPointPatrol != null)
                     {
-                        if (m_ReachedTheTarget_1 == false)
+                        bool isInsidePatrolZone = (m_AIPointPatrol.transform.position - transform.position).sqrMagnitude
+                                                   < m_AIPointPatrol.PatrolRadius * m_AIPointPatrol.PatrolRadius;
+                        if (isInsidePatrolZone == true)
                         {
-                            m_MoveToTargetPosition = m_Target_1.transform.position;
-                        }
-                        
-                        if (transform.position == m_Target_1.transform.position)
-                        {
-                            m_ReachedTheTarget_1 = true;            
-                        }
-
-                        if (m_ReachedTheTarget_1 == true)
-                        {
-                            m_MoveToTargetPosition = m_Target_2.transform.position;
-                        }
-
-                        if (transform.position == m_Target_2.transform.position)
-                        {
-                            m_ReachedTheTarget_2 = true;
-                        }
-
-                        if (m_ReachedTheTarget_2 == true)
-                        {
-                            m_MoveToTargetPosition = m_Target_3.transform.position;
-                        }
-
-                        if (transform.position == m_Target_3.transform.position)
-                        {
-                            m_ReachedTheTarget_3 = true;
-                        }
-
-                        if (m_ReachedTheTarget_3 == true)
-                        {
-                            m_MoveToTargetPosition = m_Target_4.transform.position;
-                        }
-
-                        if (transform.position == m_Target_4.transform.position)
-                        {
-                            m_AIBehaviour = AIBehaviour.Null;
-                        }
-                    }
-                    else
-                    {
-                        if (m_AIPointPatrol != null)
-                        {
-                            bool isInsidePatrolZone = (m_AIPointPatrol.transform.position - transform.position).sqrMagnitude
-                                                       < m_AIPointPatrol.PatrolRadius * m_AIPointPatrol.PatrolRadius;
-                            if (isInsidePatrolZone == true)
+                            if (m_TimerRandomizeDirection.IsFinished == true)
                             {
-                                if (m_TimerRandomizeDirection.IsFinished == true)
-                                {
-                                    Vector2 newPoint = UnityEngine.Random.onUnitSphere
-                                                       * m_AIPointPatrol.PatrolRadius + m_AIPointPatrol.transform.position;
+                                Vector2 newPoint = UnityEngine.Random.onUnitSphere
+                                                   * m_AIPointPatrol.PatrolRadius + m_AIPointPatrol.transform.position;
 
-                                    m_MoveToTargetPosition = newPoint;
+                                m_MoveToTargetPosition = newPoint;
 
-                                    m_TimerRandomizeDirection.StartTime(m_TimeRandomMovePointPatrol);
-                                }
-                            }
-                            else
-                            {
-                                m_MoveToTargetPosition = m_AIPointPatrol.transform.position;
+                                m_TimerRandomizeDirection.StartTime(m_TimeRandomMovePointPatrol);
                             }
                         }
+                        else
+                        {
+                            m_MoveToTargetPosition = m_AIPointPatrol.transform.position;
+                        }
                     }
+                }
+            }
+
+            if (m_AIBehaviour == AIBehaviour.Points)
+            {                
+                m_MoveToTargetPosition = m_PointsToFly[m_FlyingPoints].transform.position;
+
+                if (m_FlyingPoints == m_PointsToFly.Length)
+                {
+                    m_FlyingPoints = 0;
                 }
             }
         }
@@ -268,7 +237,11 @@ namespace SpaceShooter
             m_TimerFindNewTarget.RemoveTime(Time.deltaTime);
         }
 
-        public void SetPatrolBehaviour(AIPointPatrol point) // 
+        /// <summary>
+        /// Метод, который настраивает точку патрулирования.
+        /// </summary>
+        /// <param name="point"></param>
+        public void SetPatrolBehaviour(AIPointPatrol point)
         {
             m_AIBehaviour = AIBehaviour.Patrol;
 

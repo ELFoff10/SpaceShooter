@@ -195,9 +195,11 @@ MonoBehaviour:
   m_ImpactEffect: {fileID: 0}
   m_Indestructible: 0
   m_HitPoints: 100
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_ScoreValue: 1
 --- !u!114 &-8557677166241830678
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -204,7 +204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5931513553812814328
 Transform:
   m_ObjectHideFlags: 0
@@ -259,6 +259,7 @@ MonoBehaviour:
   m_ImpactEffect: {fileID: 2837196810939757405, guid: 536dd1e8ffaa4ed419dfac4cbf0ab2e9, type: 3}
   m_Indestructible: 0
   m_HitPoints: 100
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -274,6 +275,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  m_ScoreValue: 10
 --- !u!114 &-1927992747705710377
 MonoBehaviour:
   m_ObjectHideFlags: 0

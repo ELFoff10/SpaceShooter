@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_NumLives: 3
+  m_NumLives: 10
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 8805255323009270399, guid: 6b83657ffe01bb74a8355a362faa6f4b, type: 3}
   m_ShipExplosionPrefab: {fileID: 7511305519768947496, guid: 6699c95a776625143bbf1998441290a9, type: 3}

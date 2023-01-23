@@ -43,6 +43,11 @@ namespace SpaceShooter
                 {
                     dest.ApplyDamage(m_Damage);
 
+                    if (m_Parent == Player.Instance.ActiveShip)
+                    {
+                        Player.Instance.AddScore(dest.ScoreValue);
+                    }
+
                     if (m_IsPlayer && dest.CurrentHitPoints <= 0)
                     {
                         Player.Instance.AddScore(dest.m_ScoreValue);

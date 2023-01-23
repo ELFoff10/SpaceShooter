@@ -10,6 +10,7 @@ namespace SpaceShooter
     public class Destructible : Entity
     {
         [SerializeField] private ImpactEffect m_ImpactEffect;
+
         #region Properties
         /// <summary>
         /// Объект игнориурует повреждения.
@@ -30,11 +31,9 @@ namespace SpaceShooter
 
         private static List<Destructible> m_AllDestructibles;
         public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles;
-
         #endregion
 
         #region Unity Events
-
         protected virtual void Start()
         {
             m_CurrentHitPoints = m_HitPoints;
@@ -54,11 +53,9 @@ namespace SpaceShooter
         {
             m_AllDestructibles.Remove(this);
         }
-
         #endregion
 
         #region Public API
-
         /// <summary>
         /// Применение урона к объекту.
         /// </summary>
@@ -74,7 +71,6 @@ namespace SpaceShooter
                 OnDeath();
             }
         }
-
         #endregion
 
         /// <summary>
@@ -84,7 +80,7 @@ namespace SpaceShooter
         {
             Destroy(gameObject);
 
-            m_EventOnDeath?.Invoke();   
+            m_EventOnDeath?.Invoke();
 
             if (gameObject.tag == "Asteroid")
             {
@@ -118,14 +114,10 @@ namespace SpaceShooter
         [SerializeField] private UnityEvent m_EventOnDeath;
         public UnityEvent EventOnDeath => m_EventOnDeath;
 
+        #region Score
         [SerializeField] public int m_ScoreValue;
+        public int ScoreValue => m_ScoreValue;
+        #endregion
     }
-
-    #region Score
-
-    
-
-
-    #endregion
 }
 

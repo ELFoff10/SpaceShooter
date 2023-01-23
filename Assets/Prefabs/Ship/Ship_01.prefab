@@ -9999,11 +9999,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: Player
+  m_ImpactEffect: {fileID: 0}
   m_Indestructible: 0
   m_HitPoints: 100
+  m_TeamId: 2
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
+  m_ScoreValue: 0
   m_ParticleSystemforward: {fileID: 1970521569011252414}
   m_ParticleSystemforward_1: {fileID: 1970521569177009835}
   m_ParticleSystemBack: {fileID: 1970521568206415694}
@@ -10035,7 +10038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6937f34cf84fe094da5d075109c97256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_VelocityDamageModifier: 0
+  m_VelocityDamageModifier: 10
   m_DamageConstant: 1000
 --- !u!114 &2990569856411479556
 MonoBehaviour:
