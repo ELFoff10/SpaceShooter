@@ -15,8 +15,19 @@ namespace SpaceShooter
 
         [SerializeField] private MovementController m_MovementController;
 
+        protected override void Awake()
+        {
+            base.Awake();
+
+            if (m_Ship != null)
+            {
+                Destroy(m_Ship.gameObject);
+            }
+        }
+
         private void Start()
         {
+            Respawn();
             m_Ship.EventOnDeath.AddListener(OnShipDeath); // При смерти EventOnDeath вызывается в Destructible
         }
         private void OnShipDeath()
@@ -31,20 +42,28 @@ namespace SpaceShooter
             {
                 Invoke("Respawn", 3);
             }
+            else
+            {
+                LevelSequenceController.Instance.FinishCurrentLevel(false); // Если закончились жизни, то выход в меню
+            }
+
         }
         private void Respawn()
         {
-            var newPlayerShip = Instantiate(m_PlayerShipPrefab);
+            if (LevelSequenceController.PlayerShip != null) // Установлен ли корабль в LevelSequenceController
+            {
+                var newPlayerShip = Instantiate(LevelSequenceController.PlayerShip);
 
-            m_Ship = newPlayerShip.GetComponent<SpaceShip>();
+                m_Ship = newPlayerShip.GetComponent<SpaceShip>();
 
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
+                m_Ship.EventOnDeath.AddListener(OnShipDeath);
 
-            m_CameraController.SetTarget(m_Ship.transform);
+                m_CameraController.SetTarget(m_Ship.transform);
 
-            m_MovementController.SetTargetShip(m_Ship);
+                m_MovementController.SetTargetShip(m_Ship);
 
-            m_Ship.EventOnDeath.AddListener(OnShipDeath);
+                m_Ship.EventOnDeath.AddListener(OnShipDeath);
+            }
         }
 
         #region Score

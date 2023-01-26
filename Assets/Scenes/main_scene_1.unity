@@ -362,6 +362,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship_AI
       objectReference: {fileID: 0}
+    - target: {fileID: 3336337196547632078, guid: 36847e64628abdf4aa05908c9077e6dd, type: 3}
+      propertyPath: m_NavigationLinear
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336337196547632078, guid: 36847e64628abdf4aa05908c9077e6dd, type: 3}
+      propertyPath: m_NavigationAngular
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36847e64628abdf4aa05908c9077e6dd, type: 3}
 --- !u!1001 &3145630811445844448

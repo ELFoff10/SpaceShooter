@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
@@ -14,13 +11,18 @@ namespace SpaceShooter
             get; private set;
         }
         public int CurrentLevel { get; private set; }
+        public bool LastLevelResult { get; private set; }
+        public PlayerStatistics LevelStatistics { get; private set; }
+        public static SpaceShip PlayerShip { get; set; }
 
         public void StartEpisode(Episode episode)
         {
             CurrentEpisode = episode;
             CurrentLevel = 0;
 
-            // бсрасываем статы перед началом эпизода
+            // сбрасываем статы перед началом эпизода
+            LevelStatistics = new PlayerStatistics();
+            LevelStatistics.Reset();
 
             SceneManager.LoadScene(episode.Levels[CurrentLevel]);
         }
@@ -32,11 +34,17 @@ namespace SpaceShooter
 
         public void FinishCurrentLevel(bool success)
         {
-            
+            LastLevelResult = success;
+
+            CalculateLevelStatistics();
+
+            ResultPanelController.Instance.ShowResults(LevelStatistics, success);
         }
 
-        public void AvanceLevel()
+        public void AdvanceLevel()
         {
+            LevelStatistics.Reset();
+
             CurrentLevel++;
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)
@@ -49,5 +57,12 @@ namespace SpaceShooter
             }
 
         }
+
+        private void CalculateLevelStatistics()
+        {
+            LevelStatistics.m_Score = Player.Instance.Score;
+            LevelStatistics.m_NumKills = Player.Instance.NumKills;
+            LevelStatistics.m_Time = (int) LevelController.Instance.LevelTime;
+        }    
     }
 }

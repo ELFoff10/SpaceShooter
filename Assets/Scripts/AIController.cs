@@ -34,7 +34,7 @@ namespace SpaceShooter
 
         private Timer m_TimerRandomizeDirection, m_TimerFire, m_TimerFindNewTarget;
 
-        public int m_FlyingPoints;
+        public int m_FlyingPoints = 1;
 
         private void Start()
         {
@@ -112,13 +112,13 @@ namespace SpaceShooter
             }
 
             if (m_AIBehaviour == AIBehaviour.Points)
-            {                
-                m_MoveToTargetPosition = m_PointsToFly[m_FlyingPoints].transform.position;
-
+            {
                 if (m_FlyingPoints == m_PointsToFly.Length)
                 {
                     m_FlyingPoints = 0;
                 }
+
+                m_MoveToTargetPosition = m_PointsToFly[m_FlyingPoints].transform.position;
             }
         }
 
@@ -185,7 +185,6 @@ namespace SpaceShooter
                 }
             }
         }
-
         private Destructible FindNearestDestructibleTarget()
         {
             float maxDist = float.MaxValue;
