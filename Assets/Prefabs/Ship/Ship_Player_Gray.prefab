@@ -10002,16 +10002,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d181ee3d1482a40bd62f8893fa146d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: 
+  _nickName: Large Gray
   m_ImpactEffect: {fileID: 3183298192196629465, guid: ae1c9ef62a5a1a6418d7628d058f554f, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
-  m_HitPoints: 300
+  m_HitPoints: 1500
   m_TeamId: 2
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 0
+  m_ScoreValue: 200
   m_ParticleSystemforward: {fileID: 156733322894867431}
   m_ParticleSystemforward_1: {fileID: 156733322251109897}
   m_ParticleSystemBack: {fileID: 156733322886857288}

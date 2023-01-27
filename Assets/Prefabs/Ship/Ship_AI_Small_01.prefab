@@ -10030,7 +10030,7 @@ MonoBehaviour:
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 25
+  m_ScoreValue: 200
   m_ParticleSystemforward: {fileID: 1970521569011252414}
   m_ParticleSystemforward_1: {fileID: 1970521569177009835}
   m_ParticleSystemBack: {fileID: 1970521568206415694}

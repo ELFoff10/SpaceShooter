@@ -10099,16 +10099,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d181ee3d1482a40bd62f8893fa146d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: 
+  _nickName: Small Red
   m_ImpactEffect: {fileID: -1780648058663097335, guid: 6699c95a776625143bbf1998441290a9, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
-  m_HitPoints: 100
+  m_HitPoints: 500
   m_TeamId: 2
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 0
+  m_ScoreValue: 200
   m_ParticleSystemforward: {fileID: 235381131913673929}
   m_ParticleSystemforward_1: {fileID: 235381130070097628}
   m_ParticleSystemBack: {fileID: 235381131108837177}

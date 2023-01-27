@@ -191,10 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e9b081867ef784b8ff5ed09a5daca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: 
-  m_ImpactEffect: {fileID: 0}
+  _nickName: Asteroid
+  m_ImpactEffect: {fileID: 6041871301801771760, guid: e52384670facadb4793ff0bb1d387483, type: 3}
+  m_EffectAvailable: 1
   m_Indestructible: 0
-  m_HitPoints: 100
+  m_HitPoints: 25
   m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:

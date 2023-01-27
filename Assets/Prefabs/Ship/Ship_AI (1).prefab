@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 20
+  m_ScoreValue: 200
   m_ParticleSystemforward: {fileID: 7266484063255966312}
   m_ParticleSystemforward_1: {fileID: 7266484065099575421}
   m_ParticleSystemBack: {fileID: 7266484064061876632}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
   m_MaxAngularVelocity: 360
+  m_PreviewImage: {fileID: 0}
   m_Turrets:
   - {fileID: 9191580949255727230}
   - {fileID: 9191580949879591551}

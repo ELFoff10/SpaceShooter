@@ -55,7 +55,6 @@ namespace SpaceShooter
             {
                 SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
             }
-
         }
 
         private void CalculateLevelStatistics()

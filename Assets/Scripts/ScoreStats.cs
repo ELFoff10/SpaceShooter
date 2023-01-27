@@ -21,7 +21,7 @@ namespace SpaceShooter
             {
                 int currentScore = Player.Instance.Score;
 
-                if (m_LastScore != currentScore)
+                if (m_LastScore != currentScore) // Т.к метод в апдэйте, то при условии if мы только когда надо отрисовывем очки
                 {
                     m_LastScore = currentScore;
 
@@ -30,4 +30,4 @@ namespace SpaceShooter
             }
         }
     }
-}
+} 

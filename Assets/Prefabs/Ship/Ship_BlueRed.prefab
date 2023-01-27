@@ -19903,7 +19903,7 @@ GameObject:
   - component: {fileID: 1320862286869509553}
   - component: {fileID: 4311077548763500224}
   m_Layer: 0
-  m_Name: Ship_BlureRed
+  m_Name: Ship_BlueRed
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19988,7 +19988,7 @@ MonoBehaviour:
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 0
+  m_ScoreValue: 200
   m_ParticleSystemforward: {fileID: 651922078755806330}
   m_ParticleSystemforward_1: {fileID: 651922078988639855}
   m_ParticleSystemBack: {fileID: 651922077948839818}

@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: MachineGun
-  m_Velocity: 10
+  m_Velocity: 6
   m_LifeTime: 1000
   m_Radius: 0
-  m_Damage: 10
+  m_Damage: 25
   m_AreaDamage: 0
   m_Effect: {fileID: 6041871301801771760, guid: e52384670facadb4793ff0bb1d387483, type: 3}
   isHoming: 0

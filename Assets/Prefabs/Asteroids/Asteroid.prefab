@@ -184,7 +184,7 @@ MonoBehaviour:
   m_DebrisPrefabs:
   - {fileID: 4396570139703932543, guid: d74958f3d2b7d474db707757b32f9979, type: 3}
   m_Area: {fileID: 7625194629160385337}
-  m_NumDebris: 9
+  m_NumDebris: 10
   m_RandomSpeed: 3
 --- !u!1 &3484625909613882471
 GameObject:
@@ -255,11 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e9b081867ef784b8ff5ed09a5daca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: 
+  _nickName: Asteroid
   m_ImpactEffect: {fileID: 2837196810939757405, guid: 536dd1e8ffaa4ed419dfac4cbf0ab2e9, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
-  m_HitPoints: 100
+  m_HitPoints: 300
   m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:

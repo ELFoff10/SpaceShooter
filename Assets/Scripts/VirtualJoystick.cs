@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace SpaceShooter
 {
-    public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler // Интерфейсы
+    public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler // Интерфейсы
     {
         /// <summary>
         /// Фон Джойстика

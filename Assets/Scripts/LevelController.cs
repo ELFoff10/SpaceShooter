@@ -61,7 +61,6 @@ namespace SpaceShooter
                 m_EventLevelCompleted?.Invoke();
 
                 LevelSequenceController.Instance?.FinishCurrentLevel(true);
-
             }
         }
     }
