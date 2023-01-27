@@ -10104,7 +10104,7 @@ MonoBehaviour:
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 500
-  m_TeamId: 2
+  m_TeamId: 0
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -10117,7 +10117,7 @@ MonoBehaviour:
   m_Thrust: 1000
   m_Mobility: 2000
   m_MaxLinearVelocity: 15
-  m_MaxAngularVelocity: 360
+  m_MaxAngularVelocity: 180
   m_PreviewImage: {fileID: 21300000, guid: 46fb5bc2dcf48cd4aa0064ef4ff1f7b4, type: 3}
   m_Turrets:
   - {fileID: 1737420826724083423}

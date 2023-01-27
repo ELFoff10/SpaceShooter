@@ -30,6 +30,7 @@ namespace SpaceShooter
         /// Вращающая сила.
         /// </summary>
         [SerializeField] private float m_Mobility;
+        public float Mobility => m_Mobility;
 
         /// <summary>
         /// Максимальная линейная скорость(Ограничитель скорости).

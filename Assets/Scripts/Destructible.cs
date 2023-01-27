@@ -24,6 +24,7 @@ namespace SpaceShooter
         /// Стартовое кол-во жизней.
         /// </summary>
         [SerializeField] private int m_HitPoints;
+        public int HitPoints => m_HitPoints;
 
         /// <summary>
         /// Текущее кол-во жизней.
@@ -94,7 +95,7 @@ namespace SpaceShooter
 
         //public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles; List, который можно только прочитать
 
-        //protected virtual void OnEnable() Когда у нас появляется объект, мы добавляем в коллеклию
+        //protected virtual void OnEnable() Когда у нас появляется объект, мы добавляем в коллекцию
         //{
         //    if (m_AllDestructibles == null)
         //    {
