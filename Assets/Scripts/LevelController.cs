@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,12 +10,10 @@ namespace SpaceShooter
 
     public class LevelController : SingletonBase<LevelController>
     {
-        [SerializeField] private int m_ReferenceTime;
-        public int ReferenceTime => m_ReferenceTime;
+        //[SerializeField] private int m_ReferenceTime;
+        //public int ReferenceTime => m_ReferenceTime;
 
         [SerializeField] private UnityEvent m_EventLevelCompleted;
-
-        private PlayerStatistics m_PlayerStatistics;
 
         private ILevelCondition[] m_Conditions;
 
@@ -62,37 +58,37 @@ namespace SpaceShooter
 
                 m_EventLevelCompleted?.Invoke();
 
-                LevelSequenceController.Instance?.FinishCurrentLevel(true);
+                LevelSequenceController.Instance.FinishCurrentLevel(true);
             }
         }
 
-        public void AddBonusScore()
-        {
-            if (m_LevelTime >= 60)
-            {
-                m_PlayerStatistics.m_BonusScore += 50;
-            }
+        //public void AddBonusScore()
+        //{
+        //    if (m_LevelTime >= 60)
+        //    {
+        //        m_PlayerStatistics.m_BonusScore += 50;
+        //    }
 
-            if (m_LevelTime >= 45 || m_LevelTime < 60)
-            {
-                m_PlayerStatistics.m_BonusScore += 100;
-            }
+        //    if (m_LevelTime >= 45 || m_LevelTime < 60)
+        //    {
+        //        m_PlayerStatistics.m_BonusScore += 100;
+        //    }
 
-            if (m_LevelTime >= 30 || m_LevelTime < 45)
-            {
-                m_PlayerStatistics.m_BonusScore += 150;
-            }
+        //    if (m_LevelTime >= 30 || m_LevelTime < 45)
+        //    {
+        //        m_PlayerStatistics.m_BonusScore += 150;
+        //    }
 
-            if (m_LevelTime >= 15 || m_LevelTime < 30)
-            {
-                m_PlayerStatistics.m_BonusScore += 200;
-            }
+        //    if (m_LevelTime >= 15 || m_LevelTime < 30)
+        //    {
+        //        m_PlayerStatistics.m_BonusScore += 200;
+        //    }
 
-            if (m_LevelTime >= 1 || m_LevelTime < 15)
-            {
-                m_PlayerStatistics.m_BonusScore += 250;
-            }
-        }
+        //    if (m_LevelTime >= 1 || m_LevelTime < 15)
+        //    {
+        //        m_PlayerStatistics.m_BonusScore += 250;
+        //    }
+        //}
     }
 }
 

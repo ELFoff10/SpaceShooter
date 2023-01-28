@@ -10,16 +10,16 @@ namespace SpaceShooter
 
         public int m_Score;
 
-        public int m_BonusScore;
+        //public int m_BonusScore;
 
         public int m_Time;
 
 
-        public void Reset() // Ìועמה סבנאסûגאוע
+        public void Reset()
         {
             m_NumKills = 0;
             m_Score = 0;
-            m_BonusScore = 0;
+            //m_BonusScore = 0;
             m_Time = 0;
         }
     }

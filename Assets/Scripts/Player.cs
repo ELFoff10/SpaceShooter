@@ -40,11 +40,11 @@ namespace SpaceShooter
 
             if (m_NumLives > 0)
             {
-                Invoke("Respawn", 3);
+                Respawn();
             }
             else
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(true); // ≈сли закончились жизни, то выход в меню
+                LevelSequenceController.Instance.FinishCurrentLevel(false); // ≈сли закончились жизни, то выход в меню
             }
         }
 
