@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Velocity: 3
   m_LifeTime: 1000
   m_Radius: 20
-  m_Damage: 1000
-  m_AreaDamage: 1000
+  m_Damage: 3000
+  m_AreaDamage: 1500
   m_Effect: {fileID: -2271656545967383012, guid: ca47edad0eec7f64a8a8b9ab6c567775, type: 3}
   isHoming: 0
   isAreaDamage: 1

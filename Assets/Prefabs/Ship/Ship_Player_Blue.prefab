@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d181ee3d1482a40bd62f8893fa146d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: Middle Blue
+  _nickName: Blue Moon
   m_ImpactEffect: {fileID: 3183298192196629465, guid: 8f2dc5e220de8404081dc7bfc7baea94, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0

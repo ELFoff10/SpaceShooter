@@ -4831,7 +4831,7 @@ MonoBehaviour:
   m_Velocity: 2
   m_LifeTime: 500
   m_Radius: 0
-  m_Damage: 100
+  m_Damage: 250
   m_AreaDamage: 0
   m_Effect: {fileID: 6041871301801771760, guid: 0913b5cbd160f7c4db305e9f00a8c5a6, type: 3}
   isHoming: 1

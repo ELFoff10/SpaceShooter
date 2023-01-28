@@ -4828,10 +4828,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nickName: 
   m_Velocity: 3
-  m_LifeTime: 500
-  m_Radius: 2.5
-  m_Damage: 200
-  m_AreaDamage: 100
+  m_LifeTime: 750
+  m_Radius: 4
+  m_Damage: 500
+  m_AreaDamage: 250
   m_Effect: {fileID: -2271656545967383012, guid: 83884433ca47c0d44b4420f41db6fcd3, type: 3}
   isHoming: 0
   isAreaDamage: 1

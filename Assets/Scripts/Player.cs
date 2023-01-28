@@ -9,7 +9,7 @@ namespace SpaceShooter
         [SerializeField] private SpaceShip m_Ship; // На сцене
         public SpaceShip ActiveShip => m_Ship;
 
-        [SerializeField] private GameObject m_PlayerShipPrefab, m_ShipExplosionPrefab; 
+        [SerializeField] private GameObject m_PlayerShipPrefab/*, m_ShipExplosionPrefab*/; 
 
         [SerializeField] private CameraController m_CameraController;
 
@@ -32,11 +32,11 @@ namespace SpaceShooter
         }
         private void OnShipDeath()
         {
-            var explosion = Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
+            //var explosion = Instantiate(m_ShipExplosionPrefab, m_Ship.transform.position, Quaternion.identity);
 
-            Destroy(explosion, 4.0f);
+            //Destroy(explosion, 4.0f);
 
-            m_NumLives--;            
+            m_NumLives--; 
 
             if (m_NumLives > 0)
             {
@@ -44,10 +44,10 @@ namespace SpaceShooter
             }
             else
             {
-                LevelSequenceController.Instance.FinishCurrentLevel(false); // Если закончились жизни, то выход в меню
+                LevelSequenceController.Instance.FinishCurrentLevel(true); // Если закончились жизни, то выход в меню
             }
-
         }
+
         private void Respawn()
         {
             if (LevelSequenceController.PlayerShip != null) // Установлен ли корабль в LevelSequenceController
@@ -55,8 +55,6 @@ namespace SpaceShooter
                 var newPlayerShip = Instantiate(LevelSequenceController.PlayerShip);
 
                 m_Ship = newPlayerShip.GetComponent<SpaceShip>();
-
-                m_Ship.EventOnDeath.AddListener(OnShipDeath);
 
                 m_CameraController.SetTarget(m_Ship.transform);
 

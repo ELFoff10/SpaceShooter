@@ -46,6 +46,11 @@ namespace SpaceShooter
                     if (m_Parent == Player.Instance.ActiveShip)
                     {
                         Player.Instance.AddScore(dest.ScoreValue);
+
+                        if (dest.CurrentHitPoints <= 0)
+                        {
+                            Player.Instance.AddKill();
+                        }
                     }
 
                     if (m_IsPlayer && dest.CurrentHitPoints <= 0)
@@ -85,7 +90,6 @@ namespace SpaceShooter
         {
             Instantiate(m_Effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            //StartCoroutine(Coroutine());
         }
 
         public void SetParentShooter(Destructible destructible)
@@ -135,12 +139,6 @@ namespace SpaceShooter
                 return transform.up;
             }
         }
-
-        //IEnumerator Coroutine()
-        //{
-        //    yield return new WaitForSeconds(0.2f);
-        //    
-        //}
     }
 }
 

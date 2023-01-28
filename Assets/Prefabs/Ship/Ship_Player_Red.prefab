@@ -10099,7 +10099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d181ee3d1482a40bd62f8893fa146d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nickName: Small Red
+  _nickName: Red Dragon
   m_ImpactEffect: {fileID: -1780648058663097335, guid: 6699c95a776625143bbf1998441290a9, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0

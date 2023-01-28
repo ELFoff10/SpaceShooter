@@ -40,9 +40,9 @@ namespace SpaceShooter
             {
                 LevelSequenceController.Instance.AdvanceLevel();
             }
-            else // Если проиграли. Тут самому написать код для рестарта
-            { 
-                
+            else 
+            {
+                LevelSequenceController.Instance.RestartLevel();
             }
         }
     }

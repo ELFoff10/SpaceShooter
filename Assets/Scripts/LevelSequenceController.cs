@@ -61,6 +61,7 @@ namespace SpaceShooter
         {
             LevelStatistics.m_Score = Player.Instance.Score;
             LevelStatistics.m_NumKills = Player.Instance.NumKills;
+            LevelStatistics.m_BonusScore = 
             LevelStatistics.m_Time = (int) LevelController.Instance.LevelTime;
         }    
     }

@@ -6,15 +6,15 @@ namespace SpaceShooter
 {
     public class MainMenuController : SingletonBase<MainMenuController>
     {
-        [SerializeField] private SpaceShip m_DefaultSpaceShip; // переместить нужно, нет логики тут
+        [SerializeField] private SpaceShip m_DefaultSpaceShip; 
 
         [SerializeField] private GameObject m_EpisodeSelection;
 
-        [SerializeField] private GameObject m_ShipSelection; // окно выбора корабля
+        [SerializeField] private GameObject m_ShipSelection; 
 
         private void Start()
         {
-            LevelSequenceController.PlayerShip = m_DefaultSpaceShip; // На случай если он не будет установлен
+            LevelSequenceController.PlayerShip = m_DefaultSpaceShip; 
         }
 
         public void OnButtonStartNew()

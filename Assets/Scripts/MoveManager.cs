@@ -23,10 +23,6 @@ namespace SpaceShooter
         {
             m_Planets[0].rotation *= Quaternion.Euler(0f, 0f, m_Speed[0] * Time.deltaTime);
             m_Planets[1].rotation *= Quaternion.Euler(0f, 0f, m_Speed[1] * Time.deltaTime);
-            m_Planets[2].rotation *= Quaternion.Euler(0f, 0f, m_Speed[2] * Time.deltaTime);
-            m_Planets[3].rotation *= Quaternion.Euler(0f, 0f, m_Speed[3] * Time.deltaTime);
-            m_Planets[4].rotation *= Quaternion.Euler(0f, 0f, m_Speed[4] * Time.deltaTime);
-            m_Planets[5].rotation *= Quaternion.Euler(0f, 0f, m_Speed[5] * Time.deltaTime);
 
             for (int i = 0; i < m_Center.Length; i++)
             {
