@@ -1,23 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
 {
     public class PlayerStatistics : MonoBehaviour
     {
-        public int m_NumKills;
+        public int m_NumKills = 0;
 
-        public int m_Score;
+        public int m_Score = 0;
 
-        public int m_KillsBonusScore;
+        public int m_KillsBonusScore = 0;
 
-        public int m_Time;
+        public int m_Time = 100;
 
-        public int m_TimeBonusScore;
+        public int m_TimeBonusScore = 0;
 
         public int m_Bonus = 100;
 
+        public int m_RecordScore = 0;
+
+        public int m_RecordTime = 0;
+
+        public int m_RecordKills = 0;
 
         public void Reset()
         {

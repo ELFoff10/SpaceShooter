@@ -1,3 +1,5 @@
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace SpaceShooter
@@ -14,6 +16,13 @@ namespace SpaceShooter
         public bool LastLevelResult { get; private set; }
         public PlayerStatistics LevelStatistics { get; private set; }
         public static SpaceShip PlayerShip { get; set; }
+
+        [SerializeField] private TextMeshProUGUI m_RecordScore, m_RecordKills, m_RecordTime;
+
+        //protected override void Awake()
+        //{
+        //    Load();
+        //}
 
         public void StartEpisode(Episode episode)
         {
@@ -63,8 +72,44 @@ namespace SpaceShooter
             LevelStatistics.m_NumKills = Player.Instance.NumKills;
             LevelStatistics.m_KillsBonusScore = Player.Instance.NumKills * 10;
             LevelStatistics.m_Time = (int) LevelController.Instance.LevelTime;
-            LevelStatistics.m_TimeBonusScore = LevelStatistics.m_Score + LevelStatistics.m_Bonus;
-            
+
+            if (LevelStatistics.m_Score > LevelStatistics.m_RecordScore)
+            {
+                LevelStatistics.m_RecordScore = LevelStatistics.m_Score;
+            }
+
+            if (LevelStatistics.m_NumKills > LevelStatistics.m_RecordKills)
+            {
+                LevelStatistics.m_RecordKills = LevelStatistics.m_NumKills;
+            }
+
+            if (LevelStatistics.m_Time <= LevelStatistics.m_RecordTime)
+            {
+                LevelStatistics.m_RecordTime = LevelStatistics.m_Time;
+            }
+
+            m_RecordScore.text = "Best Score : " + LevelStatistics.m_RecordScore.ToString();
+            m_RecordKills.text = "Best number of Kills : " + LevelStatistics.m_RecordKills.ToString();
+            m_RecordTime.text = "Best Time : " + LevelStatistics.m_RecordTime.ToString();
+
+            //Save();
         }
+
+        //private void Save()
+        //{
+        //    PlayerPrefs.SetInt("RecordScore", LevelStatistics.m_RecordScore);
+        //    PlayerPrefs.SetInt("RecordKills", LevelStatistics.m_RecordKills);
+        //    PlayerPrefs.SetInt("RecordTime", LevelStatistics.m_RecordTime);
+        //}
+
+        //private void Load() 
+        //{
+        //    if (PlayerPrefs.GetInt("RecordScore", LevelStatistics.m_RecordScore) != 0)
+        //    {
+        //        LevelStatistics.m_RecordScore = PlayerPrefs.GetInt("RecordScore", LevelStatistics.m_RecordScore);
+        //        LevelStatistics.m_RecordKills = PlayerPrefs.GetInt("RecordKills", LevelStatistics.m_RecordKills);
+        //        LevelStatistics.m_RecordTime = PlayerPrefs.GetInt("RecordTime", LevelStatistics.m_RecordTime);
+        //    }
+        //}
     }
 }

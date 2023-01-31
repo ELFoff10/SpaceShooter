@@ -8,7 +8,9 @@ namespace SpaceShooter
 
         [SerializeField] private GameObject m_EpisodeSelectPanel;
 
-        [SerializeField] private GameObject m_ShipSelectionPanel; 
+        [SerializeField] private GameObject m_ShipSelectionPanel;
+
+        [SerializeField] private GameObject m_GeneralGameStatistics;
 
         private void Start()
         {
@@ -25,6 +27,13 @@ namespace SpaceShooter
         public void OnSelectShip()
         { 
             m_ShipSelectionPanel.SetActive(true);
+
+            gameObject.SetActive(false);
+        }
+
+        public void OnSelectStatistics()
+        {
+            m_GeneralGameStatistics.SetActive(true);
 
             gameObject.SetActive(false);
         }

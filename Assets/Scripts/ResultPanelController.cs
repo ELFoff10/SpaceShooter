@@ -26,19 +26,19 @@ namespace SpaceShooter
 
             if (levelResults.m_NumKills > 0 && levelResults.m_NumKills <= 5)
             {
-                m_KillsBonusScore.text = "Àssassin + " + levelResults.m_KillsBonusScore.ToString() + " points";
+                m_KillsBonusScore.text = "Killer! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
             if (levelResults.m_NumKills > 5 && levelResults.m_NumKills <= 10)
             {
-                m_KillsBonusScore.text = "Killer! + " + levelResults.m_KillsBonusScore.ToString() + " points";
+                m_KillsBonusScore.text = "Butcher!! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
             if (levelResults.m_NumKills > 10)
             {
-                m_KillsBonusScore.text = "Butcher!!! + " + levelResults.m_KillsBonusScore.ToString() + " points";
+                m_KillsBonusScore.text = "Beast!!! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
@@ -49,12 +49,12 @@ namespace SpaceShooter
                 m_TimeBonusScore.text = "Fast!!! + 100 points!!!";
                 levelResults.m_Score =+ 100;
             }
-            if (levelResults.m_Time > 10 && levelResults.m_Time <= 20)
+            if (levelResults.m_Time > 10 && levelResults.m_Time <= 30)
             {
                 m_TimeBonusScore.text = "Fast!!! + 50 points!";
                 levelResults.m_Score =+ 50;
             }
-            if (levelResults.m_Time > 20)
+            if (levelResults.m_Time > 30)
             {
                 m_TimeBonusScore.text = "Slow!!! + 0 points";
             }

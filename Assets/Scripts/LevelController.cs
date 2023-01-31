@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +14,10 @@ namespace SpaceShooter
         //[SerializeField] private int m_ReferenceTime;
         //public int ReferenceTime => m_ReferenceTime;
 
+
         [SerializeField] private UnityEvent m_EventLevelCompleted;
+
+        private LevelSequenceController m_SequenceController;
 
         private ILevelCondition[] m_Conditions;
 
@@ -56,7 +60,7 @@ namespace SpaceShooter
             {
                 m_IsLevelCompleted = true;
 
-                m_EventLevelCompleted?.Invoke();
+                m_EventLevelCompleted?.Invoke();                
 
                 LevelSequenceController.Instance.FinishCurrentLevel(true);
             }
