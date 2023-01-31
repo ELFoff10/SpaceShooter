@@ -129,8 +129,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3572256680843085539}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071071, w: -0.7071065}
-  m_LocalPosition: {x: 8.250005, y: 0.000015258789, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,7 +151,7 @@ Transform:
   - {fileID: 5449841079030957312}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3572256680843085537
 Rigidbody2D:
   serializedVersion: 4
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 100
-  m_TeamId: 2
+  m_TeamId: 7
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5449841078114837050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.225, y: 0.25, z: 0.03}
+  m_LocalPosition: {x: -0.174, y: 0.234, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5344,7 +5344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5449841079504164923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.225, y: 0.25, z: 0.03}
+  m_LocalPosition: {x: 0.174, y: 0.234, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

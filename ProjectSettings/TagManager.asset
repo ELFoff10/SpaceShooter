@@ -9,6 +9,7 @@ TagManager:
   - Ship
   - Asteroid
   - Point
+  - Secondary
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mode: 2
   m_ProjectilePrefab: {fileID: 8232547311801980643, guid: c1ee011bad6441448809174a1b60fec0, type: 3}
-  m_RateOfFire: 3
-  m_EnergyUsage: 3
+  m_RateOfFire: 2
+  m_EnergyUsage: 4
   m_AmmoUsage: 0
   m_LaunchSFX: {fileID: 0}

@@ -24,18 +24,21 @@ namespace SpaceShooter
             m_Planets[0].rotation *= Quaternion.Euler(0f, 0f, m_Speed[0] * Time.deltaTime);
             m_Planets[1].rotation *= Quaternion.Euler(0f, 0f, m_Speed[1] * Time.deltaTime);
 
-            for (int i = 0; i < m_Center.Length; i++)
+            if (m_Center != null)
             {
-                m_PositionX = m_Center[i].transform.position.x + Mathf.Cos(m_Angle[i]) * m_Radius[i];
-                m_PositionY = m_Center[i].transform.position.y + Mathf.Sin(m_Angle[i]) * m_Radius[i];
-                m_Sputniks[i].transform.position = new Vector2(m_PositionX, m_PositionY);
-                m_Angle[i] = m_Angle[i] + Time.deltaTime * m_AngularSpeed[i];
-
-                if (m_Angle[i] > 360f)
+                for (int i = 0; i < m_Center.Length; i++)
                 {
-                    m_Angle[i] = 0f;
+                    m_PositionX = m_Center[i].transform.position.x + Mathf.Cos(m_Angle[i]) * m_Radius[i];
+                    m_PositionY = m_Center[i].transform.position.y + Mathf.Sin(m_Angle[i]) * m_Radius[i];
+                    m_Sputniks[i].transform.position = new Vector2(m_PositionX, m_PositionY);
+                    m_Angle[i] = m_Angle[i] + Time.deltaTime * m_AngularSpeed[i];
+
+                    if (m_Angle[i] > 360f)
+                    {
+                        m_Angle[i] = 0f;
+                    }
                 }
-            }
+            }            
         }
     }
 }

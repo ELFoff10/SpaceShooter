@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -8,9 +6,9 @@ namespace SpaceShooter
     {
         [SerializeField] private SpaceShip m_DefaultSpaceShip; 
 
-        [SerializeField] private GameObject m_EpisodeSelection;
+        [SerializeField] private GameObject m_EpisodeSelectPanel;
 
-        [SerializeField] private GameObject m_ShipSelection; 
+        [SerializeField] private GameObject m_ShipSelectionPanel; 
 
         private void Start()
         {
@@ -19,14 +17,15 @@ namespace SpaceShooter
 
         public void OnButtonStartNew()
         {
-            m_EpisodeSelection.gameObject.SetActive(true);
+            m_EpisodeSelectPanel.gameObject.SetActive(true);
 
             gameObject.SetActive(false);
         }
 
         public void OnSelectShip()
         { 
-            m_ShipSelection.SetActive(true);
+            m_ShipSelectionPanel.SetActive(true);
+
             gameObject.SetActive(false);
         }
 

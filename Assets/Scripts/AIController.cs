@@ -81,7 +81,7 @@ namespace SpaceShooter
             {
                 if (m_SelectedTarget != null)
                 {
-                    m_MoveToTargetPosition = m_SelectedTarget.transform.position 
+                    m_MoveToTargetPosition = m_SelectedTarget.transform.position
                     + (m_SelectedTarget.transform.up * (Player.Instance.ActiveShip.ThrustControl * m_Coefficient));
                 }
 
@@ -179,9 +179,18 @@ namespace SpaceShooter
             {
                 if (m_TimerFire.IsFinished == true)
                 {
-                    m_SpaceShip.ShipFire(TurretMode.Primary);
+                    if (gameObject.transform.tag == "Secondary")
+                    {
+                        m_SpaceShip.ShipFire(TurretMode.Secondary);
 
-                    m_TimerFire.StartTime(m_TimeShootDelay);
+                        m_TimerFire.StartTime(m_TimeShootDelay);
+                    }
+                    else
+                    {
+                        m_SpaceShip.ShipFire(TurretMode.Primary);
+
+                        m_TimerFire.StartTime(m_TimeShootDelay);
+                    }
                 }
             }
         }

@@ -10030,11 +10030,11 @@ MonoBehaviour:
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 1500
-  m_TeamId: 3
+  m_TeamId: 5
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
-  m_ScoreValue: 200
+  m_ScoreValue: 50
   m_ParticleSystemforward: {fileID: 156733322894867431}
   m_ParticleSystemforward_1: {fileID: 156733322251109897}
   m_ParticleSystemBack: {fileID: 156733322886857288}

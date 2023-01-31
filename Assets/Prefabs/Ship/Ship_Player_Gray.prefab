@@ -10007,7 +10007,7 @@ MonoBehaviour:
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 1500
-  m_TeamId: 0
+  m_TeamId: 1
   m_EventOnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -10029,8 +10029,8 @@ MonoBehaviour:
   - {fileID: 1834203980872246386}
   - {fileID: 1834203980789567085}
   - {fileID: 1834203978969187557}
-  m_MaxEnergy: 250
-  m_MaxAmmo: 100
+  m_MaxEnergy: 300
+  m_MaxAmmo: 300
   m_EnergyRegenPerSecond: 1
 --- !u!114 &1834203980865359885
 MonoBehaviour:

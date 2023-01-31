@@ -9,7 +9,7 @@ namespace SpaceShooter
         [SerializeField] private SpaceShip m_Ship; // На сцене
         public SpaceShip ActiveShip => m_Ship;
 
-        [SerializeField] private GameObject m_PlayerShipPrefab/*, m_ShipExplosionPrefab*/; 
+        /*[SerializeField] private GameObject m_PlayerShipPrefab*//*, m_ShipExplosionPrefab*//*;*/ 
 
         [SerializeField] private CameraController m_CameraController;
 
@@ -28,7 +28,7 @@ namespace SpaceShooter
         private void Start()
         {
             Respawn();
-            m_Ship.EventOnDeath.AddListener(OnShipDeath); // При смерти EventOnDeath вызывается в Destructible
+            /*m_Ship.EventOnDeath.AddListener(OnShipDeath); */// При смерти EventOnDeath вызывается в Destructible
         }
         private void OnShipDeath()
         {
