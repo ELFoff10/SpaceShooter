@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SpaceShooter
 {
@@ -8,6 +9,10 @@ namespace SpaceShooter
     {
         [SerializeField] private TextMeshProUGUI m_Kills, m_KillsBonusScore, m_Score,
             m_Time, m_TimeBonusScore, m_Result, m_ButtonNextText;
+
+        [SerializeField] private GameObject m_ImageWin;
+        [SerializeField] private GameObject m_ImageLose;
+
 
         private bool m_Success; // Определяет завершили мы уровень или нет
 
@@ -18,6 +23,8 @@ namespace SpaceShooter
 
         public void ShowResults(PlayerStatistics levelResults, bool success)
         {
+            gameObject.SetActive(true);
+
             m_Kills.text = "Kills : " + levelResults.m_NumKills.ToString();
 
             if (levelResults.m_NumKills == 0)
@@ -60,15 +67,22 @@ namespace SpaceShooter
                 m_TimeBonusScore.text = "Slow!!! + 0 points";
             }
 
-            m_Score.text = "Score : " + levelResults.m_Score.ToString();            
+            m_Score.text = "Score : " + levelResults.m_Score.ToString();
 
             m_Success = success;
 
-            m_Result.text = success ? "Win" : "Lose";
+            if (success == true)
+            {
+                m_ImageWin.gameObject.SetActive(true);
+            }
+            else 
+            {
+                m_ImageLose.gameObject.SetActive(true);
+            }
 
-            m_ButtonNextText.text = success ? "Next" : "Restart";
+            //m_Result.text = success ? "Win" : "Lose";
 
-            gameObject.SetActive(true);
+            //m_ButtonNextText.text = success ? "Next" : "Restart";
 
             Time.timeScale = 0;
         }

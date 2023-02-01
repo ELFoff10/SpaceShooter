@@ -9,10 +9,7 @@ namespace SpaceShooter
     {
         public static string MainMenuSceneNickname = "main_menu";
 
-        public Episode CurrentEpisode
-        {
-            get; private set;
-        }
+        public Episode CurrentEpisode { get; private set; }
         public int CurrentLevel { get; private set; }
         public bool LastLevelResult { get; private set; }
         public PlayerStatistics LevelStatistics { get; private set; }
@@ -51,9 +48,9 @@ namespace SpaceShooter
 
         public void AdvanceLevel()
         {
-            CurrentLevel++;
-
             LevelStatistics.Reset();
+
+            CurrentLevel++;
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)
             {

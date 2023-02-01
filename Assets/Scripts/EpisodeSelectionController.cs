@@ -12,18 +12,18 @@ namespace SpaceShooter
 
         [SerializeField] private Image m_PreviewImage;
 
-        private void Start()
-        {
-            if (m_EpisodeNickname != null)
-            {
-                m_EpisodeNickname.text = m_Episode.EpisodeName;
-            }
+        //private void Start()
+        //{
+        //    //if (m_EpisodeNickname != null)
+        //    //{
+        //    //    m_EpisodeNickname.text = m_Episode.EpisodeName;
+        //    //}
 
-            if (m_PreviewImage != null)
-            {
-                m_PreviewImage.sprite = m_Episode.PreviewImage;
-            }
-        }
+        //    //if (m_PreviewImage != null)
+        //    //{
+        //    //    m_PreviewImage.sprite = m_Episode.PreviewImage;
+        //    //}
+        //}
 
         public void OnStartEpisodeButtonClicked()
         { 
