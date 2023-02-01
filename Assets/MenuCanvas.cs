@@ -7,19 +7,12 @@ namespace SpaceShooter
     {
         [SerializeField] private TextMeshProUGUI m_RecordScore, m_RecordKills, m_RecordTime;
 
-        private void Update()
+        public void Awake()
         {
-            if (LevelSequenceController.Instance.m_UnityEvent != null)
-            {
-                LevelSequenceController.Instance.m_UnityEvent.AddListener(OnChange);
-            }
-        }
-
-        private void OnChange()
-        {
-            m_RecordScore.text = "Best Score : " + LevelSequenceController.Instance.LevelStatistics.m_RecordScore.ToString();
-            m_RecordKills.text = "Best number of Kills : " + LevelSequenceController.Instance.LevelStatistics.m_RecordKills.ToString();
-            m_RecordTime.text = "Best Time : " + LevelSequenceController.Instance.LevelStatistics.m_RecordTime.ToString();
+            PlayerStatistics playerStatistics = new PlayerStatistics();
+            m_RecordScore.text = "Best Score : " + playerStatistics.m_RecordScore.ToString();
+            m_RecordKills.text = "Best number of Kills : " + playerStatistics.m_RecordKills.ToString();
+            m_RecordTime.text = "Best Time : " + playerStatistics.m_RecordTime.ToString();
         }
     }
 }

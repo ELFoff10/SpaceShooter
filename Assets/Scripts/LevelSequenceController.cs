@@ -18,11 +18,9 @@ namespace SpaceShooter
         public PlayerStatistics LevelStatistics { get; private set; }
         public static SpaceShip PlayerShip { get; set; }
 
-        [HideInInspector] public UnityEvent m_UnityEvent;
-
         //protected override void Awake()
         //{
-        //    Load();
+        //    //Load();
         //}
 
         public void StartEpisode(Episode episode)
@@ -47,8 +45,6 @@ namespace SpaceShooter
             LastLevelResult = success;
 
             CalculateLevelStatistics();
-
-            m_UnityEvent.Invoke();
 
             ResultPanelController.Instance.ShowResults(LevelStatistics, success);
         }

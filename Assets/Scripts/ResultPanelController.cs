@@ -24,21 +24,21 @@ namespace SpaceShooter
                 m_KillsBonusScore.text = "Not a Killer... + 0";
             }
 
-            if (levelResults.m_NumKills > 0 && levelResults.m_NumKills <= 5)
+            if (levelResults.m_NumKills > 0 && levelResults.m_NumKills <= 7)
             {
                 m_KillsBonusScore.text = "Killer! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
-            if (levelResults.m_NumKills > 5 && levelResults.m_NumKills <= 10)
+            if (levelResults.m_NumKills > 7 && levelResults.m_NumKills <= 13)
             {
-                m_KillsBonusScore.text = "Butcher!! + " + levelResults.m_KillsBonusScore.ToString() + " points";
+                m_KillsBonusScore.text = "Butcher! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
-            if (levelResults.m_NumKills > 10)
+            if (levelResults.m_NumKills > 13)
             {
-                m_KillsBonusScore.text = "Beast!!! + " + levelResults.m_KillsBonusScore.ToString() + " points";
+                m_KillsBonusScore.text = "Beast! + " + levelResults.m_KillsBonusScore.ToString() + " points";
                 levelResults.m_Score += levelResults.m_KillsBonusScore;
             }
 
