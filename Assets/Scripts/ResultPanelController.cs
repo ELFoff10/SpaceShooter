@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 
@@ -47,12 +48,12 @@ namespace SpaceShooter
             if (levelResults.m_Time >= 0 && levelResults.m_Time <= 10)
             {
                 m_TimeBonusScore.text = "Fast!!! + 100 points!!!";
-                levelResults.m_Score =+ 100;
+                levelResults.m_Score = + 100;
             }
             if (levelResults.m_Time > 10 && levelResults.m_Time <= 30)
             {
                 m_TimeBonusScore.text = "Fast!!! + 50 points!";
-                levelResults.m_Score =+ 50;
+                levelResults.m_Score = + 50;
             }
             if (levelResults.m_Time > 30)
             {

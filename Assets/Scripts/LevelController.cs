@@ -15,8 +15,6 @@ namespace SpaceShooter
 
         [SerializeField] private UnityEvent m_EventLevelCompleted;
 
-        private LevelSequenceController m_SequenceController;
-
         private ILevelCondition[] m_Conditions;
 
         private bool m_IsLevelCompleted;
@@ -58,9 +56,9 @@ namespace SpaceShooter
             {
                 m_IsLevelCompleted = true;
 
-                m_EventLevelCompleted?.Invoke();                
-
-                LevelSequenceController.Instance.FinishCurrentLevel(true);
+                m_EventLevelCompleted?.Invoke();
+   
+                LevelSequenceController.Instance?.FinishCurrentLevel(true);
             }
         }
     }

@@ -51,9 +51,9 @@ namespace SpaceShooter
 
         public void AdvanceLevel()
         {
-            LevelStatistics.Reset();
-
             CurrentLevel++;
+
+            LevelStatistics.Reset();
 
             if (CurrentEpisode.Levels.Length <= CurrentLevel)
             {

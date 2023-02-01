@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: 
-  m_ImpactEffect: {fileID: -1780648058663097335, guid: 6699c95a776625143bbf1998441290a9, type: 3}
+  m_ExplosionPrefab: {fileID: -1780648058663097335, guid: 5bd3e7a39761b1342b9cc3bc0e9c40a8, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 100

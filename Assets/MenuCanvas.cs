@@ -5,14 +5,25 @@ namespace SpaceShooter
 {
     public class MenuCanvas : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI m_RecordScore, m_RecordKills, m_RecordTime;
+        [SerializeField] private TextMeshProUGUI m_RecordScores, m_RecordKillss, m_RecordTimes;
 
-        public void Awake()
+        LevelSequenceController m_LevelSequenceController;
+
+        private void Start()
         {
-            PlayerStatistics playerStatistics = new PlayerStatistics();
-            m_RecordScore.text = "Best Score : " + playerStatistics.m_RecordScore.ToString();
-            m_RecordKills.text = "Best number of Kills : " + playerStatistics.m_RecordKills.ToString();
-            m_RecordTime.text = "Best Time : " + playerStatistics.m_RecordTime.ToString();
+            //m_LevelSequenceController = // сдесь надо как-то найти LevelSequenceController 
+        }
+
+        public void Update()
+        {
+            OnChange(m_LevelSequenceController.LevelStatistics);
+        }
+
+        private void OnChange(PlayerStatistics playerStatistics)
+        {
+            m_RecordScores.text = "Best Score : " + playerStatistics.m_Score.ToString();
+            m_RecordKillss.text = "Best number of Kills : " + playerStatistics.m_RecordKills.ToString();
+            m_RecordTimes.text = "Best Time : " + playerStatistics.m_RecordTime.ToString();
         }
     }
 }

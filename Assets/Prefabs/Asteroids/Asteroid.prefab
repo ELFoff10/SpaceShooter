@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: Asteroid
-  m_ImpactEffect: {fileID: 2837196810939757405, guid: 536dd1e8ffaa4ed419dfac4cbf0ab2e9, type: 3}
+  m_ExplosionPrefab: {fileID: 2837196810939757405, guid: 536dd1e8ffaa4ed419dfac4cbf0ab2e9, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 300

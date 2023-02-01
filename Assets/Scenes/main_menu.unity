@@ -654,15 +654,31 @@ PrefabInstance:
       value: -208.33333
       objectReference: {fileID: 0}
     - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
       propertyPath: m_RecordTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
+      propertyPath: m_RecordKills
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
+      propertyPath: m_RecordScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
+      propertyPath: m_RecordTimes
       value: 
       objectReference: {fileID: 1381242843162994657}
     - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
-      propertyPath: m_RecordKills
+      propertyPath: m_RecordKillss
       value: 
       objectReference: {fileID: 8226267401369727327}
     - target: {fileID: 6220609073575353080, guid: 1f554925387ad4842bb235abfac49130, type: 3}
-      propertyPath: m_RecordScore
+      propertyPath: m_RecordScores
       value: 
       objectReference: {fileID: 3743784629287695647}
     - target: {fileID: 6759101611574002079, guid: 1f554925387ad4842bb235abfac49130, type: 3}

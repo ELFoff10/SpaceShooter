@@ -1,13 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SpaceShooter
 {
     public class ScoreStats : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI m_Text;
+        [SerializeField] private TextMeshProUGUI m_ScoreText;
 
-        private int m_LastScore;
+        public int m_LastScore;
 
         private void Update()
         {
@@ -24,7 +25,7 @@ namespace SpaceShooter
                 {
                     m_LastScore = currentScore;
 
-                    m_Text.text = "Score : " + m_LastScore.ToString();
+                    m_ScoreText.text = "Score : " + m_LastScore.ToString();
                 }
             }
         }

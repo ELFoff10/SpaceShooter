@@ -1231,7 +1231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2647106369bf9469599ca4471c9cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Text: {fileID: 3875998461323341198}
+  m_ScoreText: {fileID: 3875998461323341198}
+  m_LastScore: 0
 --- !u!1 &2879700205306958666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2182,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResultPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4509640440387669556, guid: ea4468a597883414286a307bb9325bc3, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224296715180162234, guid: ea4468a597883414286a307bb9325bc3, type: 3}
+      propertyPath: m_DoNotDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888200137932822666, guid: ea4468a597883414286a307bb9325bc3, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171717820185905780, guid: ea4468a597883414286a307bb9325bc3, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4468a597883414286a307bb9325bc3, type: 3}
 --- !u!224 &1519171434600853087 stripped
@@ -2480,11 +2497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4784482019791478493, guid: e9e9f9fb9fa391b4d92d1d3a271f5262, type: 3}
       propertyPath: m_LimitMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4784482019791478493, guid: e9e9f9fb9fa391b4d92d1d3a271f5262, type: 3}
       propertyPath: m_WorldRadius
-      value: 28
+      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9e9f9fb9fa391b4d92d1d3a271f5262, type: 3}

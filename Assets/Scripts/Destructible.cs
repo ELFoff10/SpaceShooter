@@ -9,7 +9,7 @@ namespace SpaceShooter
     /// </summary>
     public class Destructible : Entity
     {
-        [SerializeField] private ImpactEffect m_ImpactEffect;
+        [SerializeField] private ImpactEffect m_ExplosionPrefab;
 
         [SerializeField] private bool m_EffectAvailable;
 
@@ -87,7 +87,7 @@ namespace SpaceShooter
 
             if (m_EffectAvailable == true)
             {
-                Instantiate(m_ImpactEffect, transform.position, Quaternion.identity);
+                Instantiate(m_ExplosionPrefab, transform.position, Quaternion.identity);
             }            
         }
 
@@ -101,7 +101,7 @@ namespace SpaceShooter
 
         #region Score
 
-        [SerializeField] public int m_ScoreValue;
+        [SerializeField] private int m_ScoreValue;
         public int ScoreValue => m_ScoreValue;
 
         #endregion

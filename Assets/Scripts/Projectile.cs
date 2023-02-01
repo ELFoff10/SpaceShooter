@@ -32,9 +32,12 @@ namespace SpaceShooter
             //В Raycast мы указываем дистакицию луча и т.к stepLenght = 3.3, если Velocity 10, то луч короткий 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, stepLenght);
 
+            // Не забыть выкл в св-ах проекта, вкладка Physics2d иначе не заработает
+            // disable queries hit trigger + start in collider
+
             if (hit == true)
             {
-                Destructible dest = hit.collider.transform.root.GetComponent<Destructible>();
+                var dest = hit.collider.transform.root.GetComponent<Destructible>();
 
                 if (dest != null && dest != m_Parent)
                 {
@@ -42,7 +45,7 @@ namespace SpaceShooter
 
                     if (m_Parent == Player.Instance.ActiveShip)
                     {
-                        Player.Instance.AddScore(dest.ScoreValue);
+                        //Player.Instance.AddScore(dest.ScoreValue);
 
                         if (dest.CurrentHitPoints <= 0)
                         {
@@ -52,7 +55,7 @@ namespace SpaceShooter
 
                     if (m_IsPlayer && dest.CurrentHitPoints <= 0)
                     {
-                        Player.Instance.AddScore(dest.m_ScoreValue);
+                        Player.Instance.AddScore(dest.ScoreValue);
                     }
 
                     if (isAreaDamage == true)
@@ -70,9 +73,9 @@ namespace SpaceShooter
                             }
                         }
                     }
-                }
 
-                OnProjectileLifeEnd(hit.collider, hit.point);
+                    OnProjectileLifeEnd(hit.collider, hit.point);
+                }
             }
 
             m_Timer += Time.deltaTime;

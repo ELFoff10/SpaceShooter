@@ -10003,7 +10003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: Gray Wolf
-  m_ImpactEffect: {fileID: 3183298192196629465, guid: ae1c9ef62a5a1a6418d7628d058f554f, type: 3}
+  m_ExplosionPrefab: {fileID: 3183298192196629465, guid: ae1c9ef62a5a1a6418d7628d058f554f, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 1500

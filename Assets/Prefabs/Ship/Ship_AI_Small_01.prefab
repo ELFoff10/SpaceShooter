@@ -9901,12 +9901,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AIBehaviour: 1
   m_AIPointPatrol: {fileID: 0}
-  m_NavigationLinear: 0.195
-  m_NavigationAngular: 0.187
+  m_NavigationLinear: 0.271
+  m_NavigationAngular: 0.263
   m_TimeRandomMovePointPatrol: 3
   m_TimeFindNewTarget: 3
-  m_TimeShootDelay: 0.5
-  m_RaycastLength: 7
+  m_TimeShootDelay: 1
+  m_RaycastLength: 5
   m_PointsToFly: []
   m_FlyingPoints: 0
 --- !u!114 &8805255323009270396
@@ -9922,7 +9922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nickName: AI_Small_01
-  m_ImpactEffect: {fileID: -1780648058663097335, guid: 6699c95a776625143bbf1998441290a9, type: 3}
+  m_ExplosionPrefab: {fileID: -1780648058663097335, guid: 6eb6e968b5409754e82d05e4172d8407, type: 3}
   m_EffectAvailable: 1
   m_Indestructible: 0
   m_HitPoints: 50
