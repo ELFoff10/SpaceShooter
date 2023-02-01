@@ -91,24 +91,6 @@ namespace SpaceShooter
             }            
         }
 
-        //private static HashSet<Destructible> m_AllDestructibles; похоже на List
-
-        //public static IReadOnlyCollection<Destructible> AllDestructibles => m_AllDestructibles; List, который можно только прочитать
-
-        //protected virtual void OnEnable() Когда у нас появляется объект, мы добавляем в коллекцию
-        //{
-        //    if (m_AllDestructibles == null)
-        //    {
-        //        m_AllDestructibles = new HashSet<Destructible>();
-        //    }
-
-        //    m_AllDestructibles.Add(this);
-        //}
-        //protected virtual void OnDestroy()
-        //{
-        //    m_AllDestructibles.Remove(this);
-        //}
-
         public const int TeamIdNeutral = 0;
 
         [SerializeField] private int m_TeamId;

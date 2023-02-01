@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 namespace SpaceShooter
 {
@@ -17,7 +18,7 @@ namespace SpaceShooter
         public PlayerStatistics LevelStatistics { get; private set; }
         public static SpaceShip PlayerShip { get; set; }
 
-        [SerializeField] private TextMeshProUGUI m_RecordScore, m_RecordKills, m_RecordTime;
+        [HideInInspector] public UnityEvent m_UnityEvent;
 
         //protected override void Awake()
         //{
@@ -46,6 +47,8 @@ namespace SpaceShooter
             LastLevelResult = success;
 
             CalculateLevelStatistics();
+
+            m_UnityEvent.Invoke();
 
             ResultPanelController.Instance.ShowResults(LevelStatistics, success);
         }
@@ -83,14 +86,10 @@ namespace SpaceShooter
                 LevelStatistics.m_RecordKills = LevelStatistics.m_NumKills;
             }
 
-            if (LevelStatistics.m_Time <= LevelStatistics.m_RecordTime)
+            if (LevelStatistics.m_Time > LevelStatistics.m_RecordTime)
             {
                 LevelStatistics.m_RecordTime = LevelStatistics.m_Time;
             }
-
-            m_RecordScore.text = "Best Score : " + LevelStatistics.m_RecordScore.ToString();
-            m_RecordKills.text = "Best number of Kills : " + LevelStatistics.m_RecordKills.ToString();
-            m_RecordTime.text = "Best Time : " + LevelStatistics.m_RecordTime.ToString();
 
             //Save();
         }
