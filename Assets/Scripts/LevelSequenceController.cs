@@ -64,24 +64,24 @@ namespace SpaceShooter
 
         private void CalculateLevelStatistics()
         {
-            LevelStatistics.m_Score = Player.Instance.Score;
-            LevelStatistics.m_NumKills = Player.Instance.NumKills;
-            LevelStatistics.m_KillsBonusScore = Player.Instance.NumKills * 10;
-            LevelStatistics.m_Time = (int) LevelController.Instance.LevelTime;
+            LevelStatistics.m_StatScore = Player.Instance.m_PlayerScore;
+            LevelStatistics.m_StatNumKills = Player.Instance.m_PlayerNumKills;
+            LevelStatistics.m_StatKillsBonusScore = Player.Instance.m_PlayerNumKills * 10;
+            LevelStatistics.m_StatTime = (int) LevelController.Instance.LevelTime;
 
-            if (LevelStatistics.m_Score > LevelStatistics.m_RecordScore)
+            if (Player.Instance.m_PlayerScore >= LevelStatistics.m_StatRecordScore)
             {
-                LevelStatistics.m_RecordScore = LevelStatistics.m_Score;
+                LevelStatistics.m_StatRecordScore = Player.Instance.m_PlayerScore;
             }
 
-            if (LevelStatistics.m_NumKills > LevelStatistics.m_RecordKills)
+            if (Player.Instance.m_PlayerNumKills > LevelStatistics.m_StatRecordKills)
             {
-                LevelStatistics.m_RecordKills = LevelStatistics.m_NumKills;
+                LevelStatistics.m_StatRecordKills = Player.Instance.m_PlayerNumKills;
             }
 
-            if (LevelStatistics.m_Time > LevelStatistics.m_RecordTime)
+            if ((int)LevelController.Instance.LevelTime > LevelStatistics.m_StatRecordTime)
             {
-                LevelStatistics.m_RecordTime = LevelStatistics.m_Time;
+                LevelStatistics.m_StatRecordTime = (int)LevelController.Instance.LevelTime;
             }
 
             //Save();

@@ -32,13 +32,13 @@ namespace SpaceShooter
         {
             LevelSequenceController.PlayerShip = m_Prefab;
 
-            StartCoroutine(Coroutine());
+            //StartCoroutine(Coroutine());
         }        
 
-        IEnumerator Coroutine()
-        {
-            yield return new WaitForSeconds(3.0f);
-            MainMenuController.Instance.gameObject.SetActive(true);
-        }
+        //IEnumerator Coroutine()
+        //{
+        //    yield return new WaitForSeconds(3.0f);
+        //    MainMenuController.Instance.gameObject.SetActive(true);
+        //}
     }
 }

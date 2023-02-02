@@ -6167,9 +6167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9191b0ce729bc4a8f52ab3cf0c171d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RecordScore: {fileID: 0}
-  m_RecordKills: {fileID: 0}
-  m_RecordTime: {fileID: 0}
+  m_RecordScores: {fileID: 0}
+  m_RecordKillss: {fileID: 0}
+  m_RecordTimes: {fileID: 0}
 --- !u!1 &995986025864639636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6435,9 +6435,9 @@ RectTransform:
   m_Father: {fileID: 1618896724767024394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -25}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &758997965931040219
@@ -6705,9 +6705,9 @@ RectTransform:
   m_Father: {fileID: 1618896724767024394}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -391.66666}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1339432874450471472
@@ -6840,9 +6840,9 @@ RectTransform:
   m_Father: {fileID: 1618896724767024394}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -208.33333}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &307647474281787166

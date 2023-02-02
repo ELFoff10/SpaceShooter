@@ -4,7 +4,7 @@ namespace SpaceShooter
 {
     public class LevelConditionScore : MonoBehaviour, ILevelCondition
     {
-        [SerializeField] private int m_Score;
+        [SerializeField] private int m_ToConditionScore;
 
         private bool m_Reached;
 
@@ -14,7 +14,7 @@ namespace SpaceShooter
             {
                 if (Player.Instance != null && Player.Instance.ActiveShip != null)
                 {
-                    if (Player.Instance.Score >= m_Score)
+                    if (Player.Instance.m_PlayerScore >= m_ToConditionScore)
                     {
                         m_Reached = true;
                     }

@@ -66,17 +66,17 @@ namespace SpaceShooter
 
         #region Score
 
-        public int Score { get; private set; }
-        public int NumKills { get; private set; }
+        public int m_PlayerScore { get; private set; }
+        public int m_PlayerNumKills { get; private set; }
 
         public void AddKill()
         {
-            NumKills++;
+            m_PlayerNumKills++;
         }
 
         public void AddScore(int num)
         {
-            Score += num;
+            m_PlayerScore += num;
         }
 
         #endregion

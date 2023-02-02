@@ -8,7 +8,7 @@ namespace SpaceShooter
     {
         [SerializeField] private TextMeshProUGUI m_ScoreText;
 
-        public int m_LastScore;
+        public int m_ScoreStatsLastScore;
 
         private void Update()
         {
@@ -19,13 +19,13 @@ namespace SpaceShooter
         {
             if (Player.Instance != null)
             {
-                int currentScore = Player.Instance.Score;
+                int currentScore = Player.Instance.m_PlayerScore;
 
-                if (m_LastScore != currentScore) // Т.к метод в апдэйте, то при условии if мы только когда надо отрисовывем очки
+                if (m_ScoreStatsLastScore != currentScore) // Т.к метод в апдэйте, то при условии if мы только когда надо отрисовывем очки
                 {
-                    m_LastScore = currentScore;
+                    m_ScoreStatsLastScore = currentScore;
 
-                    m_ScoreText.text = "Score : " + m_LastScore.ToString();
+                    m_ScoreText.text = "Score : " + m_ScoreStatsLastScore.ToString();
                 }
             }
         }

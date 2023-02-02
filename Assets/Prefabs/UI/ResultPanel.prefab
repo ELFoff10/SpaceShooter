@@ -565,18 +565,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885915727301367745}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1528715695546026850}
-  m_RootOrder: 0
+  m_Father: {fileID: 132037617796678418}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: -200, y: -475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4810597688601873871
 CanvasRenderer:
@@ -773,8 +773,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3327452973467683798}
+  m_Children: []
   m_Father: {fileID: 132037617796678418}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -911,6 +910,7 @@ RectTransform:
   - {fileID: 8321494471791206606}
   - {fileID: 6542496013344021089}
   - {fileID: 1528715695546026850}
+  - {fileID: 3327452973467683798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -940,13 +940,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 1
-  m_Kills: {fileID: 4509640440387669556}
-  m_KillsBonusScore: {fileID: 3352128839157553790}
-  m_Score: {fileID: 9171717820185905780}
-  m_Time: {fileID: 6888200137932822666}
-  m_TimeBonusScore: {fileID: 8450480262414409221}
-  m_Result: {fileID: 5406548682013360842}
-  m_ButtonNextText: {fileID: 8148122417652681009}
+  m_TextKills: {fileID: 4509640440387669556}
+  m_TextKillsBonusScore: {fileID: 3352128839157553790}
+  m_TextScore: {fileID: 9171717820185905780}
+  m_TextTime: {fileID: 6888200137932822666}
+  m_TextTimeBonusScore: {fileID: 8450480262414409221}
+  m_TextResult: {fileID: 5406548682013360842}
+  m_TextButtonNext: {fileID: 8148122417652681009}
+  m_ImageWin: {fileID: 0}
+  m_ImageLose: {fileID: 0}
 --- !u!114 &2127468397195220050
 MonoBehaviour:
   m_ObjectHideFlags: 0
