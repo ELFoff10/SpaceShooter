@@ -3062,6 +3062,7 @@ GameObject:
   - component: {fileID: 816921338}
   - component: {fileID: 816921337}
   - component: {fileID: 816921336}
+  - component: {fileID: 816921340}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -3154,6 +3155,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &816921340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816921335}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9191b0ce729bc4a8f52ab3cf0c171d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RecordScores: {fileID: 4478526689395634408}
+  m_RecordKillss: {fileID: 9222218231082546344}
+  m_RecordTimes: {fileID: 2231917411249758742}
 --- !u!1 &820523753
 GameObject:
   m_ObjectHideFlags: 0
@@ -5560,6 +5576,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 816921340}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1414167943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6064,6 +6092,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 816921340}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1455078782
 MonoBehaviour:
@@ -7815,6 +7855,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 816921340}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1811072666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9391,21 +9443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &995986025023718906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995986025035503460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9191b0ce729bc4a8f52ab3cf0c171d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RecordScores: {fileID: 4478526689395634408}
-  m_RecordKillss: {fileID: 9222218231082546344}
-  m_RecordTimes: {fileID: 2231917411249758742}
 --- !u!222 &995986025035503456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9476,7 +9513,6 @@ GameObject:
   - component: {fileID: 995986025035503459}
   - component: {fileID: 995986025035503456}
   - component: {fileID: 995986025035503457}
-  - component: {fileID: 995986025023718906}
   m_Layer: 5
   m_Name: GeneralGameStatistics
   m_TagString: Untagged
@@ -9704,7 +9740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -350}
+  m_AnchoredPosition: {x: 400, y: -258.3333}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1992013791147254013
@@ -10319,7 +10355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &7505036841206533053
 GameObject:
   m_ObjectHideFlags: 0

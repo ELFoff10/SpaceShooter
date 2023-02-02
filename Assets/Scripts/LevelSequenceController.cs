@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 namespace SpaceShooter
 {
@@ -15,10 +16,11 @@ namespace SpaceShooter
         public PlayerStatistics LevelStatistics { get; private set; }
         public static SpaceShip PlayerShip { get; set; }
 
-        //protected override void Awake()
-        //{
-        //    //Load();
-        //}
+        protected override void Awake()
+        {
+            base.Awake();
+            //Load();
+        }
 
         public void StartEpisode(Episode episode)
         {
@@ -68,6 +70,7 @@ namespace SpaceShooter
             LevelStatistics.m_StatNumKills = Player.Instance.m_PlayerNumKills;
             LevelStatistics.m_StatKillsBonusScore = Player.Instance.m_PlayerNumKills * 10;
             LevelStatistics.m_StatTime = (int) LevelController.Instance.LevelTime;
+
 
             if (Player.Instance.m_PlayerScore >= LevelStatistics.m_StatRecordScore)
             {
