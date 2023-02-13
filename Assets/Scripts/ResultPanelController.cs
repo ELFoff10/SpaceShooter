@@ -66,6 +66,10 @@ namespace SpaceShooter
                 m_TextTimeBonusScore.text = "Slow... 0 points";
             }
 
+            levelResults.m_StatRecordScore = levelResults.m_StatScore;
+            levelResults.m_StatRecordKills = levelResults.m_StatNumKills;
+            levelResults.m_StatRecordTime = levelResults.m_StatTime;
+
             m_TextScore.text = "Score : " + levelResults.m_StatScore.ToString();
 
             gameObject.SetActive(true);

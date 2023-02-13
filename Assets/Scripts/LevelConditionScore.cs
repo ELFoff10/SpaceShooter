@@ -19,6 +19,7 @@ namespace SpaceShooter
                         m_Reached = true;
                     }
                 }
+
                 return m_Reached;
             } 
         }

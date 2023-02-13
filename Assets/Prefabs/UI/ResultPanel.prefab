@@ -945,10 +945,10 @@ MonoBehaviour:
   m_TextScore: {fileID: 9171717820185905780}
   m_TextTime: {fileID: 6888200137932822666}
   m_TextTimeBonusScore: {fileID: 8450480262414409221}
-  m_TextResult: {fileID: 5406548682013360842}
   m_TextButtonNext: {fileID: 8148122417652681009}
   m_ImageWin: {fileID: 0}
   m_ImageLose: {fileID: 0}
+  m_Stats: {fileID: 0}
 --- !u!114 &2127468397195220050
 MonoBehaviour:
   m_ObjectHideFlags: 0

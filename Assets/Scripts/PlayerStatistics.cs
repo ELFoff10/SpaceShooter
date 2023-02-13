@@ -23,10 +23,10 @@ namespace SpaceShooter
         public void Reset()
         {
             //m_StatNumKills = 0;
-            //m_StatScore = 0;
-            m_StatKillsBonusScore = 0;
+            m_StatScore = 0;
+            //m_StatKillsBonusScore = 0;
             m_StatTime = 0;
-            m_StatTimeBonusScore = 0;
+            //m_StatTimeBonusScore = 0;
         }
     }
 }

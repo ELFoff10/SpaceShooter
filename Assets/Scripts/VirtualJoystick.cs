@@ -36,6 +36,7 @@ namespace SpaceShooter
             position.x = (position.x / m_VisualJoystick.rectTransform.sizeDelta.x); // sizeDelta.x = значение Width в Rect Transform
             position.y = (position.y / m_VisualJoystick.rectTransform.sizeDelta.y); // 400/400 = 1, 200/400 = 0.5, 0/400 = 0
 
+            /* Ѕыло моЄ
             // —мещаем координаты в центр, чтобы был положительный и отрицательный шаг от -1 до +1
             position.x = position.x * 2 - 1;
             position.y = position.y * 2 - 1;
@@ -54,6 +55,18 @@ namespace SpaceShooter
 
             //  anchoredPosition - ѕоложение центра этого RectTransform относительно опорной точки прив€зки.
             m_Stick.rectTransform.anchoredPosition = new Vector2(Value.x * offsetX, Value.y * offsetY);
+            */
+
+            float x = (m_VisualJoystick.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1;
+            float y = (m_VisualJoystick.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
+
+            Value = new Vector3(x, y, 0);
+            Value = (Value.magnitude > 1) ? Value.normalized : Value;
+
+            //to define the area in which joystick can move around
+            m_Stick.rectTransform.anchoredPosition = new Vector3(Value.x * (m_VisualJoystick.rectTransform.sizeDelta.x / 3)
+                                                                   , Value.y * (m_VisualJoystick.rectTransform.sizeDelta.y) / 3);
+
         }
 
         public void OnPointerDown(PointerEventData eventData)

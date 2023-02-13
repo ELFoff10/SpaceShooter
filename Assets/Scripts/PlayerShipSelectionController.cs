@@ -13,6 +13,7 @@ namespace SpaceShooter
         [SerializeField] private TextMeshProUGUI m_Hitpoints;
         [SerializeField] private TextMeshProUGUI m_Speed;
         [SerializeField] private TextMeshProUGUI m_Agility;
+        [SerializeField] private Transform m_Target;
         
         [SerializeField] private Image m_Preview;
 
@@ -32,8 +33,11 @@ namespace SpaceShooter
         {
             LevelSequenceController.PlayerShip = m_Prefab;
 
+            //Instantiate(m_Prefab.PreviewImage, m_Target);
+
+
             //StartCoroutine(Coroutine());
-        }        
+        }
 
         //IEnumerator Coroutine()
         //{

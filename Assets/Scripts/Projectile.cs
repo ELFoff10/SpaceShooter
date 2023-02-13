@@ -45,12 +45,11 @@ namespace SpaceShooter
 
                     if (m_Parent == Player.Instance.ActiveShip)
                     {
-                        //Player.Instance.AddScore(dest.ScoreValue);
+                        Player.Instance.AddScore(dest.ScoreValue);
 
                         if (dest.CurrentHitPoints <= 0)
                         {
                             Player.Instance.AddKill();
-                            Player.Instance.AddScore(dest.ScoreValue);
                         }
                     }
 
@@ -74,10 +73,11 @@ namespace SpaceShooter
 
                                 if (m_Parent == Player.Instance.ActiveShip)
                                 {
+                                    Player.Instance.AddScore(dest.ScoreValue);
+
                                     if (destructible.CurrentHitPoints <= 0)
                                     {
                                         Player.Instance.AddKill();
-                                        Player.Instance.AddScore(dest.ScoreValue);
                                     }
                                 }
                             }

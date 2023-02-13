@@ -8,7 +8,7 @@ namespace SpaceShooter
     {
         [SerializeField] private TextMeshProUGUI m_RecordScores, m_RecordKillss, m_RecordTimes;
 
-        public void LateUpdate()
+        private void LateUpdate()
         {
             Change();
         }
@@ -19,11 +19,10 @@ namespace SpaceShooter
 
             if (sequenceController != null)
             {
-                m_RecordScores.text = "Best Score : " + sequenceController.LevelStatistics.m_StatRecordScore.ToString();
+                m_RecordScores.text = "Best Score : " + sequenceController.LevelStatistics.m_StatRecordScore.ToString(); 
                 m_RecordKillss.text = "Best Kills : " + sequenceController.LevelStatistics.m_StatRecordKills.ToString();
                 m_RecordTimes.text = "Best Time : " + sequenceController.LevelStatistics.m_StatRecordTime.ToString();
             }
-
         }
     }
 }

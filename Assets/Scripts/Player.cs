@@ -4,12 +4,10 @@ namespace SpaceShooter
 {
     public class Player : SingletonBase<Player>
     {
-        [SerializeField] private int m_NumLives; // Кол-во жизней
+        [SerializeField] private int m_NumLives; 
 
-        [SerializeField] private SpaceShip m_Ship; // На сцене
+        [SerializeField] private SpaceShip m_Ship;
         public SpaceShip ActiveShip => m_Ship;
-
-        /*[SerializeField] private GameObject m_PlayerShipPrefab*//*, m_ShipExplosionPrefab*//*;*/ 
 
         [SerializeField] private CameraController m_CameraController;
 
@@ -66,8 +64,8 @@ namespace SpaceShooter
 
         #region Score
 
-        public int m_PlayerScore { get; private set; }
-        public int m_PlayerNumKills { get; private set; }
+        public int m_PlayerScore { get; set; }
+        public int m_PlayerNumKills { get; set; }
 
         public void AddKill()
         {
