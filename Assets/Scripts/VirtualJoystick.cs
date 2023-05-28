@@ -12,7 +12,7 @@ namespace SpaceShooter
         [SerializeField] private Image m_VisualJoystick;
 
         /// <summary>
-        /// Джойстик
+        /// Джойстик внутри фона
         /// </summary>
         [SerializeField] private Image m_Stick;
 
