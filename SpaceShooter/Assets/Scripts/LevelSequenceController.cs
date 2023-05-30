@@ -9,7 +9,7 @@ namespace SpaceShooter
 {
     public class LevelSequenceController : SingletonBase<LevelSequenceController>
     {
-        public static string MainMenuSceneNickname = "main_menu";
+        public static string MainMenuSceneNickname = "Main_Menu";
 
         public Episode CurrentEpisode { get; private set; }
         public int CurrentLevel { get; private set; }
